@@ -1,0 +1,22 @@
+{
+  "title": "Other interests",
+  "icon": "bi bi-music-note-beamed",
+  "list": [
+    {
+      "category": "Creativity",
+      "items": "Photography, Painting, Creative Writing, Piano"
+    },
+    {
+      "category": "Live performance",
+      "items": "Classical music, Racing, Theatre"
+    },
+    {
+      "category": "Collector",
+      "items": "Vinyl records"
+    },
+    {
+      "category": "Miscellaneous",
+      "items": "Traveling"
+    }
+  ]
+}

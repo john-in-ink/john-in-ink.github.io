@@ -1,0 +1,22 @@
+{
+  "title": "Selected publications",
+  "icon": "bi bi-journal-bookmark",
+  "list": [
+    {
+      "position": "Ssebandeke, J. B. (2025). Role of nonlocal eddy-mean flow interactions in the redistribution of energy in the ocean. *EGUsphere (Preprint)*.",
+      "company": "",
+      "dates": ""
+    },
+    {
+      "position": "**Ssebandeke, J. B.**, Von Storch, J. S., & Brüggemann, N. (2023). Sensitivity of the Lorenz Energy Cycle of the global ocean. *Ocean Dynamics, Springer Nature*. DOI: 10.1007/s10236-023-01568-6.",
+      "company": "",
+      "dates": ""
+    },
+    {
+      "position": "Farneti, R., Stiz, A., & **Ssebandeke, J. B.** (2022). Improvements and persistent biases in the southeast tropical Atlantic in CMIP models. *npj Climate and Atmospheric Science (Nature)*, 5(1), 42.",
+      "company": "",
+      "dates": ""
+    }
+  ]
+}
+

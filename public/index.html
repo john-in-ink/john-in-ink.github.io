@@ -1,0 +1,575 @@
+<!doctype html>
+<html
+    lang="en-us"
+    class="m-auto  dark "
+><head>
+	<meta name="generator" content="Hugo 0.161.1"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+  <title>John In Ink</title>
+  
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  />
+  <meta name="theme-color" content="" />
+  <meta name="description" content="A physicist&#39;s diary" />
+  <meta name="author" content="John Ssebandeke" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="//fonts.googleapis.com/css?family=Didact+Gothic%7CRoboto:400%7CRoboto+Mono"
+  />
+
+   
+  <link href="/main.css" rel="stylesheet" />
+  
+
+  <script>
+    const expandAccordion = (elem) => {
+      const allPanels = Array.from(document.querySelectorAll(".panel"));
+      const allAccordion = Array.from(document.querySelectorAll(".accordion"));
+
+      if (!elem.parentElement.classList.contains("active")) {
+        allAccordion.forEach((acc) => {
+          acc.classList.remove("active");
+        });
+        elem.parentElement.classList.add("active");
+        allPanels.forEach(function (elem) {
+          elem.style.maxHeight = null;
+        });
+        let activePanel = elem.parentElement.nextElementSibling;
+        if (
+          activePanel.id != "skill-panel" &&
+          document.querySelector("#skill-panel")
+        ) {
+          let skillBars = Array.from(
+            document.querySelectorAll("#skill-percent"),
+          );
+          skillBars.forEach((elem) => {
+            elem.style.width = "0";
+          });
+        }
+        activePanel.style.maxHeight = activePanel.scrollHeight + "px";
+      }
+    };
+  </script>
+
+  <script>
+    let html = document.querySelector("html");
+    let theme = window.localStorage.getItem("theme");
+
+    const setTheme = (theme) => {
+      html.classList.remove("light");
+      if (theme === "dark") {
+        html.classList.add("dark");
+        window.localStorage.setItem("theme", "dark");
+      } else {
+        html.classList.remove("dark");
+        window.localStorage.setItem("theme", "light");
+      }
+      fixThemeToggleIcon(theme);
+    };
+
+    const fixThemeToggleIcon = (theme) => {
+      let themeToggle = document.querySelector(".theme-toggle");
+      if (themeToggle) {
+        if (theme === "dark") {
+          themeToggle.classList.remove("bi-moon");
+          themeToggle.classList.add("bi-brightness-high");
+        } else {
+          themeToggle.classList.remove("bi-brightness-high");
+          themeToggle.classList.add("bi-moon");
+        }
+      }
+    };
+
+    if (theme == null) {
+      if (html.classList.contains("dark")) {
+        theme = "dark";
+      } else if (html.classList.contains("light")) {
+        theme = "light";
+      } else {
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        if (prefersDark) {
+          theme = "dark";
+        } else {
+          theme = "light";
+        }
+      }
+    }
+
+    setTheme(theme);
+
+    const toggleTheme = () => {
+      html.classList.contains("dark") ? setTheme("light") : setTheme("dark");
+    };
+
+    window.onload = () => {
+      fixThemeToggleIcon(theme);
+
+      let defaultActivePanel = document.querySelector(".accordion.active");
+      if (defaultActivePanel) {
+        defaultActivePanel.nextElementSibling.style.maxHeight =
+          defaultActivePanel.nextElementSibling.scrollHeight + "px";
+      }
+
+      
+      try {
+        const navContainers = document.querySelectorAll('div.flex.flex-row.items-center.gap-4.font-bold, div');
+        navContainers.forEach(container => {
+          
+          if (container.textContent.trim().startsWith("Home") && container.textContent.includes("Blog") && !container.innerHTML.includes('gallery/')) {
+            const galleryLink = document.createElement('a');
+            galleryLink.href = '\/gallery\/';
+            galleryLink.className = 'hover:text-amber-500 transition-colors ml-4';
+            galleryLink.textContent = 'Gallery';
+            container.appendChild(galleryLink);
+          }
+        });
+      } catch(e) { console.log(e); }
+    };
+
+    window.onresize = () => {
+      let defaultActivePanel = document.querySelector(".accordion.active");
+      if (defaultActivePanel) {
+        defaultActivePanel.nextElementSibling.style.maxHeight =
+          defaultActivePanel.nextElementSibling.scrollHeight + "px";
+      }
+    };
+  </script>
+</head>
+
+<style>
+   
+  .theme-toggle, .bi-brightness-high, .bi-moon {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    pointer-events: none !important;
+  }
+</style>
+
+<style>
+   
+  .theme-toggle, .bi-brightness-high, .bi-moon {
+    display: none !important;
+  }
+  
+   
+  html, body, main {
+    background-color: #1a120b !important;
+    color: #f5f5f5 !important;
+  }
+</style>
+<body class="h-screen p-2 m-auto max-w-4xl flex flex-col">
+    
+    <header
+  class="nav flex flex-row row py-2 mb-6 w-full border-b border-gray-700 dark:border-gray-300 justify-between"
+>
+  <div>
+    <a class="nav-menu-item" href="http://localhost:1313/">Home</a>
+    <a class="nav-menu-item" href="/blog">Blog</a>
+  </div>
+  <div>
+    <a class="mr-4 no-underline" href="/search">
+      <i class="bi bi-search"></i>
+    </a>
+    <i
+      class="bi bi-brightness-high theme-toggle text-blue-500 hover:text-blue-700 dark:text-yellow-300 dark:hover:text-yellow-500 cursor-pointer text-lg mr-9 sm:mr-0"
+      onclick="toggleTheme()"
+    ></i>
+  </div>
+</header>
+
+
+
+    
+    <main class="grow">
+
+<style>
+   
+  .panel {
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease-out, margin 0.3s ease;
+    margin-bottom: 0 !important;
+  }
+   
+  .accordion.active + .panel {
+    max-height: 1000px;  
+    opacity: 1;
+    margin-bottom: 1.5rem !important;  
+  }
+</style>
+
+<div class="grid grid-cols-1 md:grid-cols-5 gap-4 py-2 antialiased">
+  
+  <div class="col-span-2">
+    <div class="bg-gray-300 dark:bg-darker drop-shadow-md p-2 rounded-t-lg">
+      <div class="flex flex-col justify-center">
+        <div
+  class="w-full p-2 flex justify-center align-middle profile-photo-container"
+>
+  <img
+    class="rounded-sm"
+    src="/images/2.jpg"
+    alt="John, In Ink"
+  />
+</div>
+
+
+<div class="w-full p-2 text-center profile-text-container" style="margin-top: 0.5rem;">
+  
+  <h2 class="text-2xl font-bold m-2 text-gray-100" style="color: #ffffff !important; font-family: inherit;">
+    John, In Ink
+  </h2>
+  
+  
+  <p class="italic text-center m-2 tracking-wide" 
+     style="font-size: 1.35rem !important; font-weight: 400 !important; color: #b3b3b3 !important; line-height: 1.5; display: block;">
+    A physicist's diary
+  </p>
+</div>
+
+        <div class="px-2 text-center"><div class="mb-4 flex flex-wrap justify-center">
+  
+  <div class="mx-2">
+    <a class="text-2xl" href="https://www.linkedin.com/in/john-ssebandeke/">
+      <i class="mt-1 bi bi-linkedin"></i>
+    </a>
+  </div>
+  
+  <div class="mx-2">
+    <a class="text-2xl" href="https://www.instagram.com/john.uncut/">
+      <i class="mt-1 bi bi-instagram"></i>
+    </a>
+  </div>
+  
+  <div class="mx-2">
+    <a class="text-2xl" href="mailto:ssebandekejohn@gmail.com">
+      <i class="mt-1 bi bi-envelope-fill"></i>
+    </a>
+  </div>
+  
+  <div class="mx-2">
+    <a class="text-2xl" href="https://scholar.google.com/citations?user=CG20kbMAAAAJ&amp;hl">
+      <i class="mt-1 ai ai-google-scholar"></i>
+    </a>
+  </div>
+  
+  <div class="mx-2">
+    <a class="text-2xl" href="https://orcid.org/0000-0002-5203-1365">
+      <i class="mt-1 ai ai-orcid"></i>
+    </a>
+  </div>
+  
+</div></div>
+      </div>
+    </div>
+    
+  </div>
+  
+  
+  <div class="col-span-3 relative flex flex-col justify-between" style="min-height: 100%;">
+    <div>
+      
+      
+      
+      <div class="px-2 mb-5">
+        <h2 class="mb-0 accordion font-sans text-xl font-bold tracking-wide text-zinc-100 transition-colors duration-200 active">
+          
+          <div onclick="expandAccordion(this)" style="cursor: pointer" class="hover:text-amber-500 transition-colors py-1 flex items-center gap-2">
+            <i class=" text-amber-500"></i>
+            <span>About Me</span>
+          </div>
+        </h2>
+
+        
+        <div class="panel overflow-hidden px-2 ml-2" >
+          <div class="markdownify-container">
+  
+    <p class="my-2">
+      Physicist specializing in climate science, renewable energy, and data-driven strategy, with global experience in Uganda, Italy, and Germany
+    </p>
+  
+</div>
+        </div>
+      </div>
+      
+      
+      <div class="px-2 mb-5">
+        <h2 class="mb-0 accordion font-sans text-xl font-bold tracking-wide text-zinc-100 transition-colors duration-200">
+          
+          <div onclick="expandAccordion(this)" style="cursor: pointer" class="hover:text-amber-500 transition-colors py-1 flex items-center gap-2">
+            <i class="bi bi-briefcase text-amber-500"></i>
+            <span>Experience and Education</span>
+          </div>
+        </h2>
+
+        
+        <div class="panel overflow-hidden px-2 ml-2" >
+          <ul class="list-disc list-outside pl-6 mb-4">
+  
+  <li class="text-left" style="margin-bottom: 24px;">
+    <strong>May 2024 - May 2026</strong><br>
+    <strong>Title:</strong> Postdoc<br>
+    <strong>Institute:</strong> Max-Planck-Institut für Meteorologie<br>
+    
+    <strong>Location:</strong> Hamburg, Germany
+    
+  </li>
+  
+  <li class="text-left" style="margin-bottom: 24px;">
+    <strong>May 2020 - May 2024</strong><br>
+    <strong>Title:</strong> PhD Student<br>
+    <strong>Institute:</strong> Max-Planck-Institut für Meteorologie<br>
+    
+    <strong>Location:</strong> Hamburg, Germany
+    
+  </li>
+  
+  <li class="text-left" style="margin-bottom: 24px;">
+    <strong>Aug 2019 - May 2020</strong><br>
+    <strong>Title:</strong> Research Assistant<br>
+    <strong>Institute:</strong> The Abdus Salam International Centre for Theoretical Physics<br>
+    
+    <strong>Location:</strong> Trieste, Italy
+    
+  </li>
+  
+  <li class="text-left" style="margin-bottom: 24px;">
+    <strong>Aug 2018 - Aug 2019</strong><br>
+    <strong>Title:</strong> Postgraduate Diploma (Earth System Physics)<br>
+    <strong>Institute:</strong> The Abdus Salam International Centre for Theoretical Physics<br>
+    
+    <strong>Location:</strong> Trieste, Italy
+    
+  </li>
+  
+  <li class="text-left" style="margin-bottom: 24px;">
+    <strong>Sep 2016 - Aug 2018</strong><br>
+    <strong>Title:</strong> M.Sc. in Physics<br>
+    <strong>Institute:</strong> Makerere University<br>
+    
+    <strong>Location:</strong> Kampala, Uganda
+    
+  </li>
+  
+  <li class="text-left" style="margin-bottom: 24px;">
+    <strong>Sep 2012 - Jan 2016</strong><br>
+    <strong>Title:</strong> B.Sc. in Physics and Mathematics<br>
+    <strong>Institute:</strong> Makerere University<br>
+    
+    <strong>Location:</strong> Kampala, Uganda
+    
+  </li>
+  
+</ul>
+        </div>
+      </div>
+      
+      
+      <div class="px-2 mb-5">
+        <h2 class="mb-0 accordion font-sans text-xl font-bold tracking-wide text-zinc-100 transition-colors duration-200">
+          
+          <div onclick="expandAccordion(this)" style="cursor: pointer" class="hover:text-amber-500 transition-colors py-1 flex items-center gap-2">
+            <i class="bi bi-calendar3 text-amber-500"></i>
+            <span>Conferences and Events</span>
+          </div>
+        </h2>
+
+        
+        <div class="panel overflow-hidden px-2 ml-2" >
+          <ul class="list-disc list-outside pl-6 mb-4">
+  
+  <li class="text-left" style="margin-bottom: 12px;">
+    WindWorks, Riga (2026)
+  </li>
+  
+  <li class="text-left" style="margin-bottom: 12px;">
+    Ocean Sciences, Glasgow (2026)
+  </li>
+  
+  <li class="text-left" style="margin-bottom: 12px;">
+    EGU conference, Vienna (2025)
+  </li>
+  
+  <li class="text-left" style="margin-bottom: 12px;">
+    AGU conference, Washington D.C (2024)
+  </li>
+  
+  <li class="text-left" style="margin-bottom: 12px;">
+    Ocean Sciences, Online (2022)
+  </li>
+  
+  <li class="text-left" style="margin-bottom: 12px;">
+    Waves and mean flow, Bornö (2022)
+  </li>
+  
+  <li class="text-left" style="margin-bottom: 12px;">
+    Eddies and waves, Hamburg (2021)
+  </li>
+  
+  <li class="text-left" style="margin-bottom: 12px;">
+    Summer School on Oceanic Eastern Boundary Upwelling Systems, Trieste (2019)
+  </li>
+  
+</ul>
+        </div>
+      </div>
+      
+      
+      <div class="px-2 mb-5">
+        <h2 class="mb-0 accordion font-sans text-xl font-bold tracking-wide text-zinc-100 transition-colors duration-200">
+          
+          <div onclick="expandAccordion(this)" style="cursor: pointer" class="hover:text-amber-500 transition-colors py-1 flex items-center gap-2">
+            <i class="bi bi-journal-bookmark text-amber-500"></i>
+            <span>Selected publications</span>
+          </div>
+        </h2>
+
+        
+        <div class="panel overflow-hidden px-2 ml-2" >
+          <ul class="list-disc list-outside pl-6 mb-4">
+  
+  <li class="text-left" style="margin-bottom: 14px;">
+    Ssebandeke, J. B. (2025). Role of nonlocal eddy-mean flow interactions in the redistribution of energy in the ocean. <em>EGUsphere (Preprint)</em>.
+  </li>
+  
+  <li class="text-left" style="margin-bottom: 14px;">
+    <strong>Ssebandeke, J. B.</strong>, Von Storch, J. S., &amp; Brüggemann, N. (2023). Sensitivity of the Lorenz Energy Cycle of the global ocean. <em>Ocean Dynamics, Springer Nature</em>. DOI: 10.1007/s10236-023-01568-6.
+  </li>
+  
+  <li class="text-left" style="margin-bottom: 14px;">
+    Farneti, R., Stiz, A., &amp; <strong>Ssebandeke, J. B.</strong> (2022). Improvements and persistent biases in the southeast tropical Atlantic in CMIP models. <em>npj Climate and Atmospheric Science (Nature)</em>, 5(1), 42.
+  </li>
+  
+</ul>
+        </div>
+      </div>
+      
+      
+      <div class="px-2 mb-5">
+        <h2 class="mb-0 accordion font-sans text-xl font-bold tracking-wide text-zinc-100 transition-colors duration-200">
+          
+          <div onclick="expandAccordion(this)" style="cursor: pointer" class="hover:text-amber-500 transition-colors py-1 flex items-center gap-2">
+            <i class="bi bi-music-note-beamed text-amber-500"></i>
+            <span>Other interests</span>
+          </div>
+        </h2>
+
+        
+        <div class="panel overflow-hidden px-2 ml-2" >
+          
+<div class="mb-5">
+  
+  
+  <ul class="list-disc pl-5 space-y-2" style="margin-top: 1rem;">
+    
+    <li class="text-neutral-200">
+      
+      <strong class="text-white">Creativity:</strong> 
+      
+      
+        Photography, Painting, Creative Writing, Piano
+      
+    </li>
+    
+    <li class="text-neutral-200">
+      
+      <strong class="text-white">Live performance:</strong> 
+      
+      
+        Classical music, Racing, Theatre
+      
+    </li>
+    
+    <li class="text-neutral-200">
+      
+      <strong class="text-white">Collector:</strong> 
+      
+      
+        
+        Vinyl records (<a href="https://www.discogs.com/user/john.ssebandeke/collection" target="_blank" style="color: #38bdf8; text-decoration: underline; font-weight: bold;" onmouseover="this.style.color='#7dd3fc'" onmouseout="this.style.color='#38bdf8'">Discogs Collection</a>)
+      
+    </li>
+    
+    <li class="text-neutral-200">
+      
+      <strong class="text-white">Miscellaneous:</strong> 
+      
+      
+        Traveling
+      
+    </li>
+    
+  </ul>
+</div>
+
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <div class="mt-4 px-2">
+      
+      <div>
+        <div class="flex items-center justify-between mb-2">
+          <h3 class="text-xs font-bold tracking-wider text-amber-500 uppercase">
+            Latest from the Blog
+          </h3>
+        </div>
+        
+        <a href="http://localhost:1313/blog/thirst-for-speed/" class="group block overflow-hidden rounded-lg bg-zinc-900/40 border border-zinc-800/80 hover:border-amber-500/30 hover:-translate-y-0.5 transform transition-all duration-200 p-3">
+          <div class="flex items-center gap-4">
+            
+            
+            <div class="w-32 h-20 relative rounded bg-zinc-950 overflow-hidden flex-shrink-0 border border-zinc-800/60">
+              
+                <img src="/images/bmw-e30-dtm.jpg" alt="Thirst for speed" class="w-full h-full object-cover">
+              
+            </div>
+
+            
+            <div class="flex-1 min-w-0">
+              <span class="text-[10px] font-mono text-zinc-500 uppercase block mb-0.5">
+                Aug 1, 2026
+              </span>
+              <h4 class="text-sm font-bold text-zinc-200 group-hover:text-amber-500 transition-colors truncate mb-1">
+                Thirst for speed
+              </h4>
+              <p class="text-xs text-zinc-400 line-clamp-2 leading-relaxed">
+                For a guy without a valid driving license, it might seem unfounded to be a motorsport enthusiast — traveling to circuits in remote areas just to quench my thirst for speed. This past weekend, I found myself at the DTM race at the Motorsport Arena Oschersleben, the northernmost permanent track in Germany. Spectators here sit high up on embankments about six to eight meters above the asphalt, giving you a perfect bird&rsquo;s-eye view of the race action. From this elevated vantage point, nothing hits you harder than the monstrous roar of the engines. They roar more intensely than a thunderstorm cracking directly overhead — especially on the first lap when the cars run bumper-to-bumper, weaving through the corners like a giant, mechanical snake. The sound of the roar is not just something you hear; it is something you feel as pressure waves vibrate your chest cavity.
+
+              </p>
+              <div class="text-[11px] font-medium text-amber-500 mt-1">
+                Read post →
+              </div>
+            </div>
+
+          </div>
+        </a>
+      </div>
+      
+    </div>
+
+  </div>
+</div>
+
+    </main>
+    
+  </body>
+</html>

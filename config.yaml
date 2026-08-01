@@ -1,0 +1,48 @@
+theme: Aafu
+baseURL: https://github.io
+locale: en-us
+build:
+  writeStats: true
+title: John In Ink
+
+params:
+  author: John Ssebandeke
+  description: A physicist's diary
+  theme:
+    mainTheme: dark
+    showAttribute: false
+    singlePage: false
+  accordion:
+    - item: about_me
+      expand: true
+    - item: experiences
+    - item: conferences
+    - item: publications
+    - item: hobbies
+
+security:
+  node:
+    permissions:
+      disable: true
+
+ignorefiles:
+  - "markdown-syntax.md"
+  - "rich-content.md"
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+# NAVBAR LINK DEFINITIONS: Positions Home, Blog, and Gallery across the top
+menu:
+  main:
+    - name: "Home"
+      url: "/"
+      weight: 1
+    - name: "Blog"
+      url: "/blog/"
+      weight: 2
+    - name: "Gallery"
+      url: "/gallery/"
+      weight: 3

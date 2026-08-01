@@ -1,0 +1,23 @@
+<div
+  class="w-full p-2 flex justify-center align-middle profile-photo-container"
+>
+  <img
+    class="rounded-sm"
+    src="{{ `images` | relURL }}/{{ hugo.Data.profile.photo }}"
+    alt="{{ hugo.Data.profile.name }}"
+  />
+</div>
+
+<!-- This hardcoded text block gives you total font size control without breaking Hugo -->
+<div class="w-full p-2 text-center profile-text-container" style="margin-top: 0.5rem;">
+  <!-- Title -->
+  <h2 class="text-2xl font-bold m-2 text-gray-100" style="color: #ffffff !important; font-family: inherit;">
+    John, In Ink
+  </h2>
+  
+  <!-- Subtitle (Bigger, clear, and perfectly italicized) -->
+  <p class="italic text-center m-2 tracking-wide" 
+     style="font-size: 1.35rem !important; font-weight: 400 !important; color: #b3b3b3 !important; line-height: 1.5; display: block;">
+    A physicist's diary
+  </p>
+</div>

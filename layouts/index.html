@@ -1,0 +1,102 @@
+{{ define "main" }}
+<!-- Smooth Accordion Animation Styling Layer -->
+<style>
+  /* Base closed panel state */
+  .panel {
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease-out, margin 0.3s ease;
+    margin-bottom: 0 !important;
+  }
+  /* Active opened panel state */
+  .accordion.active + .panel {
+    max-height: 1000px; /* Arbitrary large height to accommodate content sizing fluidly */
+    opacity: 1;
+    margin-bottom: 1.5rem !important; /* Spacing below content when open */
+  }
+</style>
+
+<div class="grid grid-cols-1 md:grid-cols-5 gap-4 py-2 antialiased">
+  <!-- Left Side: Profile and Socials -->
+  <div class="col-span-2">
+    <div class="bg-gray-300 dark:bg-darker drop-shadow-md p-2 rounded-t-lg">
+      <div class="flex flex-col justify-center">
+        {{ partial "profilePhoto" . }}
+        <div class="px-2 text-center">{{ partial "social" . }}</div>
+      </div>
+    </div>
+    {{ partial "footer" . }}
+  </div>
+  
+  <!-- Right Side: Navigation & Blog Teaser Only -->
+  <div class="col-span-3 relative flex flex-col justify-between" style="min-height: 100%;">
+    <div>
+      {{ $found_expanded := false }}
+      {{ range .Site.Params.accordion }}
+      <!-- Base bottom margin for standard collapsed headers -->
+      <div class="px-2 mb-5">
+        <h2 class="mb-0 accordion font-sans text-xl font-bold tracking-wide text-zinc-100 transition-colors duration-200 {{- if and (.expand) (not $found_expanded) }} active {{- $found_expanded = true }} {{- end }}">
+          {{ $current := index hugo.Data .item }}
+          <div onclick="expandAccordion(this)" style="cursor: pointer" class="hover:text-amber-500 transition-colors py-1 flex items-center gap-2">
+            <i class="{{ $current.icon }} text-amber-500"></i>
+            <span>{{ $current.title | markdownify }}</span>
+          </div>
+        </h2>
+
+        <!-- Panel container setup using the CSS animation profiles defined above -->
+        <div class="panel overflow-hidden px-2 ml-2" {{ if .panel_id }} id="{{ .panel_id }}" {{ end }}>
+          {{ partial (print "accordion/" .item) $ }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+    <!-- Bottom Section: Blog Teaser -->
+    <div class="mt-4 px-2">
+      {{ range first 1 (where .Site.RegularPages "Section" "blog") }}
+      <div>
+        <div class="flex items-center justify-between mb-2">
+          <h3 class="text-xs font-bold tracking-wider text-amber-500 uppercase">
+            Latest from the Blog
+          </h3>
+        </div>
+        
+        <a href="{{ .Permalink }}" class="group block overflow-hidden rounded-lg bg-zinc-900/40 border border-zinc-800/80 hover:border-amber-500/30 hover:-translate-y-0.5 transform transition-all duration-200 p-3">
+          <div class="flex items-center gap-4">
+            
+            <!-- Clean Image Border -->
+            <div class="w-32 h-20 relative rounded bg-zinc-950 overflow-hidden flex-shrink-0 border border-zinc-800/60">
+              {{ if .Params.image }}
+                <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" class="w-full h-full object-cover">
+              {{ else if .Params.thumbnail }}
+                <img src="{{ .Params.thumbnail | relURL }}" alt="{{ .Title }}" class="w-full h-full object-cover">
+              {{ else }}
+                <div class="w-full h-full bg-zinc-800 flex items-center justify-center text-xl">📝</div>
+              {{ end }}
+            </div>
+
+            <!-- Blog Info -->
+            <div class="flex-1 min-w-0">
+              <span class="text-[10px] font-mono text-zinc-500 uppercase block mb-0.5">
+                {{ .Date.Format "Jan 2, 2006" }}
+              </span>
+              <h4 class="text-sm font-bold text-zinc-200 group-hover:text-amber-500 transition-colors truncate mb-1">
+                {{ .Title }}
+              </h4>
+              <p class="text-xs text-zinc-400 line-clamp-2 leading-relaxed">
+                {{ .Summary | plainify }}
+              </p>
+              <div class="text-[11px] font-medium text-amber-500 mt-1">
+                Read post →
+              </div>
+            </div>
+
+          </div>
+        </a>
+      </div>
+      {{ end }}
+    </div>
+
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>John, In Ink on John In Ink</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in John, In Ink on John In Ink</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Aug 2026 12:02:00 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Travel</title>
+      <link>http://localhost:1313/gallery/travel/</link>
+      <pubDate>Sat, 01 Aug 2026 12:02:00 +0200</pubDate>
+      <guid>http://localhost:1313/gallery/travel/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Photography</title>
+      <link>http://localhost:1313/gallery/photography/</link>
+      <pubDate>Sat, 01 Aug 2026 12:01:00 +0200</pubDate>
+      <guid>http://localhost:1313/gallery/photography/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Paintings</title>
+      <link>http://localhost:1313/gallery/paintings/</link>
+      <pubDate>Sat, 01 Aug 2026 12:00:00 +0200</pubDate>
+      <guid>http://localhost:1313/gallery/paintings/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Thirst for speed</title>
+      <link>http://localhost:1313/blog/thirst-for-speed/</link>
+      <pubDate>Sat, 01 Aug 2026 00:45:00 +0200</pubDate>
+      <guid>http://localhost:1313/blog/thirst-for-speed/</guid>
+      <description>&lt;p&gt;For a guy without a valid driving license, it might seem unfounded to be a motorsport enthusiast — traveling to circuits in remote areas just to quench my thirst for speed. This past weekend, I found myself at the DTM race at the Motorsport Arena Oschersleben, the northernmost permanent track in Germany. Spectators here sit high up on embankments about six to eight meters above the asphalt, giving you a perfect bird&amp;rsquo;s-eye view of the race action. From this elevated vantage point, nothing hits you harder than the monstrous roar of the engines. They roar more intensely than a thunderstorm cracking directly overhead — especially on the first lap when the cars run bumper-to-bumper, weaving through the corners like a giant, mechanical snake. The sound of the roar is not just something you hear; it is something you feel as pressure waves vibrate your chest cavity.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Search</title>
+      <link>http://localhost:1313/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/search/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

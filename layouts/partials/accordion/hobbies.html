@@ -1,0 +1,20 @@
+{{ $hobbies := .Site.Data.hobbies }}
+<div class="mb-5">
+  <!-- REMOVED: Duplicate title heading block to clear up spacing -->
+  
+  <ul class="list-disc pl-5 space-y-2" style="margin-top: 1rem;">
+    {{ range $hobbies.list }}
+    <li class="text-neutral-200">
+      <!-- FIXED: Changed label color from text-amber-500 back to clean white -->
+      <strong class="text-white">{{ .category }}:</strong> 
+      
+      {{ if eq .category "Collector" }}
+        <!-- FIXED: Inserted your unique username collection path and colored it cyan/blue for visibility -->
+        Vinyl records (<a href="https://www.discogs.com/user/john.ssebandeke/collection" target="_blank" style="color: #38bdf8; text-decoration: underline; font-weight: bold;" onmouseover="this.style.color='#7dd3fc'" onmouseout="this.style.color='#38bdf8'">Discogs Collection</a>)
+      {{ else }}
+        {{ .items }}
+      {{ end }}
+    </li>
+    {{ end }}
+  </ul>
+</div>

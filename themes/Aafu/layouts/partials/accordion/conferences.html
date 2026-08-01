@@ -1,0 +1,7 @@
+<ul class="list-disc list-outside pl-6 mb-4">
+  {{ range hugo.Data.conferences.list }}
+  <li class="text-left" style="margin-bottom: 12px;">
+    {{ .name | markdownify }}
+  </li>
+  {{ end }}
+</ul>

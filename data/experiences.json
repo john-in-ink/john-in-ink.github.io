@@ -1,0 +1,12 @@
+{
+  "title": "Experience and Education",
+  "icon": "bi bi-briefcase",
+  "list": [
+    {"position": "Postdoc", "company": "Max-Planck-Institut für Meteorologie", "dates": "May 2024 - May 2026", "details": ["Hamburg, Germany"]},
+    {"position": "PhD Student", "company": "Max-Planck-Institut für Meteorologie", "dates": "May 2020 - May 2024", "details": ["Hamburg, Germany"]},
+    {"position": "Research Assistant", "company": "The Abdus Salam International Centre for Theoretical Physics", "dates": "Aug 2019 - May 2020", "details": ["Trieste, Italy"]},
+    {"position": "Postgraduate Diploma (Earth System Physics)", "company": "The Abdus Salam International Centre for Theoretical Physics", "dates": "Aug 2018 - Aug 2019", "details": ["Trieste, Italy"]},
+    {"position": "M.Sc. in Physics", "company": "Makerere University", "dates": "Sep 2016 - Aug 2018", "details": ["Kampala, Uganda"]},
+    {"position": "B.Sc. in Physics and Mathematics", "company": "Makerere University", "dates": "Sep 2012 - Jan 2016", "details": ["Kampala, Uganda"]}
+  ]
+}

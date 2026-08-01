@@ -1,0 +1,12 @@
+<ul class="list-disc list-outside pl-6 mb-4">
+  {{ range hugo.Data.experiences.list }}
+  <li class="text-left" style="margin-bottom: 24px;">
+    <strong>{{ .dates }}</strong><br>
+    <strong>Title:</strong> {{ .position }}<br>
+    <strong>Institute:</strong> {{ .company }}<br>
+    {{ range .details }}
+    <strong>Location:</strong> {{ . }}
+    {{ end }}
+  </li>
+  {{ end }}
+</ul>

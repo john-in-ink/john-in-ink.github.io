@@ -1,0 +1,57 @@
+{{ define "main" }}
+<div class="w-full max-w-2xl mx-auto mt-8 p-4">
+  <!-- 1. Pagefind script and style assets -->
+  <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+  <script src="/pagefind/pagefind-ui.js" type="module"></script>
+
+  <!-- 2. The container where the searchbar renders -->
+  <div id="search" style="min-height: 250px;"></div>
+
+  <!-- 3. Trigger script loop -->
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      new PagefindUI({ 
+        element: "#search", 
+        showSubResults: true,
+        showImages: false,
+        baseUrl: "/",
+        bundlePath: "/pagefind/"
+      });
+    });
+  </script>
+
+  <style>
+    /* Ensure input panels and text styles match your beautiful dark theme seamlessly */
+    .pagefind-ui {
+      --pagefind-ui-primary: #e5e5e5 !important;
+      --pagefind-ui-text: #e5e5e5 !important;
+      --pagefind-ui-background: #1a120b !important;
+      --pagefind-ui-border: #404040 !important;
+    }
+    
+    .pagefind-ui__search-input {
+      background-color: #262626 !important;
+      color: #ffffff !important;
+      border: 1px solid #404040 !important;
+      border-radius: 6px !important;
+      
+      /* FIX: Increased the left padding from 16px to 48px to cleanly push the text past the icon lens */
+      padding: 12px 16px 12px 48px !important;
+    }
+    
+    /* Absolute selector targets to force-clear any underlying layout icon duplication blocks */
+    .pagefind-ui__search-input-wrapper::before,
+    .pagefind-ui__search-input-wrapper svg,
+    .pagefind-ui__search-clear::before {
+      opacity: 0.6 !important;
+    }
+
+    .pagefind-ui__result-title, .pagefind-ui__result-link {
+      color: #ffffff !important;
+    }
+    .pagefind-ui__result-excerpt {
+      color: #b3b3b3 !important;
+    }
+  </style>
+</div>
+{{ end }}

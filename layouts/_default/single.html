@@ -1,0 +1,97 @@
+{{ define "main" }}
+{{ .Scratch.Set "figure_count" 1 }}
+<div class="prose dark:prose-invert m-auto" style="text-align: justify;">
+  
+  <!-- Cleaned Heading Header -->
+  <div style="margin-bottom: 2rem;">
+    <h1 class="top-h1" style="margin-bottom: 0.25rem;">{{- .Title -}}</h1>
+    <p style="margin: 0; font-size: 0.9rem; color: #a3a3a3;">{{ .Date.Format "January 2, 2006" }}</p>
+  </div>
+
+  <!-- Featured Hero Banner Layout Positioned First -->
+  {{ if .Params.image }}
+  <figure style="width: 100%; margin: 0 0 2.5rem 0; padding: 0;">
+    <div style="width: 100%; max-height: 440px; overflow: hidden; border-radius: 8px; border: 1px solid #262626; box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+      <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" style="width: 100%; height: auto; aspect-ratio: 16/10; object-fit: cover; display: block; margin: 0;">
+    </div>
+    <figcaption style="margin-top: 0.75rem; font-size: 0.85rem; color: #a3a3a3; text-align: center; font-style: italic; line-height: 1.4; padding: 0 10px;">
+      BMW E30: Dressed in a beautiful vintage DTM racing livery — perfect blend of retro style and raw mechanical energy
+    </figcaption>
+  </figure>
+  {{ end }}
+
+  <!-- Main Justified Body Content -->
+  <div class="content post-body-justified">
+    {{ .Content }}
+  </div>
+</div>
+
+<!-- Premium Typography Stylesheet Override -->
+<style>
+  /* FIXED: Fully restored correct Google Fonts import path to repair white screen error */
+  @import url('https://googleapis.com');
+
+  .post-body-justified p {
+    text-align: justify !important;
+    text-justify: inter-word;
+    margin-bottom: 1.5rem;
+  }
+
+  /* FORCES ALL ARTICLE LINKS (Like the Lancia link) TO BE CYAN-BLUE */
+  .post-body-justified a {
+    color: #38bdf8 !important;
+    text-decoration: underline !important;
+    font-weight: 600 !important;
+    transition: color 0.15s ease !important;
+  }
+  .post-body-justified a:hover {
+    color: #7dd3fc !important;
+  }
+  
+  /* Destroys the theme's boxy background and overrides with Editorial Calligraphy */
+  .post-body-justified blockquote {
+    background-color: transparent !important; /* Wipes out the gray background box */
+    border-left: none !important;
+    margin: 3rem auto !important;
+    padding: 1.25rem 0 !important;
+    max-width: 80%;
+    text-align: center !important;
+    
+    /* Elegant Serif Calligraphy Styles */
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-size: 1.125rem !important; 
+    line-height: 1.6 !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+    color: #f59e0b !important; /* Premium motorsport gold/papaya */
+    
+    /* Clean Minimalist Accent Boundaries */
+    border-top: 1px solid #3a3a3a !important;
+    border-bottom: 1px solid #3a3a3a !important;
+    box-shadow: none !important;
+  }
+  
+  /* Strips hidden quotation marks */
+  .post-body-justified blockquote::before,
+  .post-body-justified blockquote::after,
+  .post-body-justified blockquote p::before,
+  .post-body-justified blockquote p::after {
+    content: "" !important;
+    display: none !important;
+  }
+  
+  /* Forces the nested paragraph text to match the clean calligraphic container */
+  .post-body-justified blockquote p {
+    background: transparent !important;
+    text-align: center !important;
+    margin: 0 !important;
+    font-family: 'Playfair Display', Georgia, serif !important;
+    color: #f59e0b !important;
+    font-size: 1.125rem !important; 
+    font-weight: 700 !important;
+    line-height: 1.6 !important;
+  }
+</style>
+
+{{ partial "prevnext" . }}
+{{ end }}

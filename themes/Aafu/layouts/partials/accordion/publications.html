@@ -1,0 +1,7 @@
+<ul class="list-disc list-outside pl-6 mb-4">
+  {{ range hugo.Data.publications.list }}
+  <li class="text-left" style="margin-bottom: 14px;">
+    {{ .position | markdownify }}
+  </li>
+  {{ end }}
+</ul>

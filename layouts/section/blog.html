@@ -1,0 +1,109 @@
+{{ define "main" }}
+
+<!-- Isolated Stylesheet Injection to completely fix photo scaling -->
+<style>
+  .padlet-grid-container {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)) !important;
+    gap: 36px !important;
+    width: 100% !important;
+    margin-top: 1rem !important;
+  }
+
+  .padlet-card {
+    display: flex !important;
+    flex-direction: column !important;
+    background-color: transparent !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    width: 100% !important;
+  }
+
+  /* Structural Image container with an optimal, un-squished dimensional ratio */
+  .padlet-img-wrapper {
+    width: 100% !important;
+    /* Changed to a taller height to stop horizontal squishing */
+    height: 250px !important; 
+    overflow: hidden !important;
+    border-radius: 8px !important;
+    border: 1px solid #262626 !important;
+    margin-bottom: 14px !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4) !important;
+    background-color: #171717 !important;
+  }
+
+  .padlet-img-wrapper a {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  /* Crops and scales your racing shots flawlessly without any distortion */
+  .padlet-img-wrapper img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Crops edges cleanly instead of compressing content */
+    object-position: center !important;
+    display: block !important;
+    transition: filter 0.2s ease !important;
+  }
+
+  .padlet-img-wrapper img:hover {
+    filter: brightness(1.1) !important;
+  }
+</style>
+
+<div>
+  <!-- Padlet-Style Responsive Grid Container -->
+  <div class="padlet-grid-container">
+    
+    {{ range $key, $val := (.Paginator 10).Pages }}
+    
+    <!-- Individual Post Card -->
+    <div class="padlet-card" 
+         style="transition: transform 0.2s ease;"
+         onmouseover="this.style.transform='translateY(-4px)'" 
+         onmouseout="this.style.transform='translateY(0)'">
+      
+      <!-- Card Image Box Wrapper -->
+      {{ if .Params.image }}
+      <div class="padlet-img-wrapper">
+        <a href="{{ .Permalink | relURL }}">
+          <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}">
+        </a>
+      </div>
+      {{ end }}
+
+      <!-- Card Text Content Area -->
+      <div style="display: flex; flex-direction: column; gap: 4px; padding: 2px 4px;">
+        
+        <!-- Post Title -->
+        <a href="{{ .Permalink | relURL }}" style="text-decoration: none;">
+          <h2 style="color: #f59e0b; font-size: 1.45rem; font-weight: 700; margin: 0; line-height: 1.3; transition: color 0.15s ease;" onmouseover="this.style.color='#fbbf24'" onmouseout="this.style.color='#f59e0b'">
+            {{- .Title -}}
+          </h2>
+        </a>
+        
+        <!-- Published Date -->
+        <div style="font-size: 0.85rem; color: #a3a3a3; font-weight: 500; margin-top: 2px;">
+          {{ .Date.Format "January 2, 2006" }}
+        </div>
+
+        <!-- Hidden Native Metadata Layer (Kept for Theme Compatibility) -->
+        <div id="panel-item-{{ $key }}" class="panel metadata-panel" style="display: none;">
+          <div class="metadata">{{- partial "metadata" . -}}</div>
+        </div>
+
+      </div>
+      
+    </div>
+    {{ end }}
+
+  </div>
+</div>
+
+<!-- Built-in Pagination Footer Links -->
+<div class="my-12 flex justify-center pagination-links">
+  {{ template "_internal/pagination.html" (dict "page" . "format" "terse") }}
+</div>
+{{ end }}

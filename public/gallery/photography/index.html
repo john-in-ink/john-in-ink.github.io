@@ -1,0 +1,475 @@
+<!doctype html>
+<html
+    lang="en-us"
+    class="m-auto  dark "
+><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+  <title>Photography - John In Ink</title>
+  
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  />
+  <meta name="theme-color" content="" />
+  <meta name="description" content="A physicist&#39;s diary" />
+  <meta name="author" content="John Ssebandeke" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="//fonts.googleapis.com/css?family=Didact+Gothic%7CRoboto:400%7CRoboto+Mono"
+  />
+
+   
+  <link href="/main.css" rel="stylesheet" />
+  
+
+  <script>
+    const expandAccordion = (elem) => {
+      const allPanels = Array.from(document.querySelectorAll(".panel"));
+      const allAccordion = Array.from(document.querySelectorAll(".accordion"));
+
+      if (!elem.parentElement.classList.contains("active")) {
+        allAccordion.forEach((acc) => {
+          acc.classList.remove("active");
+        });
+        elem.parentElement.classList.add("active");
+        allPanels.forEach(function (elem) {
+          elem.style.maxHeight = null;
+        });
+        let activePanel = elem.parentElement.nextElementSibling;
+        if (
+          activePanel.id != "skill-panel" &&
+          document.querySelector("#skill-panel")
+        ) {
+          let skillBars = Array.from(
+            document.querySelectorAll("#skill-percent"),
+          );
+          skillBars.forEach((elem) => {
+            elem.style.width = "0";
+          });
+        }
+        activePanel.style.maxHeight = activePanel.scrollHeight + "px";
+      }
+    };
+  </script>
+
+  <script>
+    let html = document.querySelector("html");
+    let theme = window.localStorage.getItem("theme");
+
+    const setTheme = (theme) => {
+      html.classList.remove("light");
+      if (theme === "dark") {
+        html.classList.add("dark");
+        window.localStorage.setItem("theme", "dark");
+      } else {
+        html.classList.remove("dark");
+        window.localStorage.setItem("theme", "light");
+      }
+      fixThemeToggleIcon(theme);
+    };
+
+    const fixThemeToggleIcon = (theme) => {
+      let themeToggle = document.querySelector(".theme-toggle");
+      if (themeToggle) {
+        if (theme === "dark") {
+          themeToggle.classList.remove("bi-moon");
+          themeToggle.classList.add("bi-brightness-high");
+        } else {
+          themeToggle.classList.remove("bi-brightness-high");
+          themeToggle.classList.add("bi-moon");
+        }
+      }
+    };
+
+    if (theme == null) {
+      if (html.classList.contains("dark")) {
+        theme = "dark";
+      } else if (html.classList.contains("light")) {
+        theme = "light";
+      } else {
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        if (prefersDark) {
+          theme = "dark";
+        } else {
+          theme = "light";
+        }
+      }
+    }
+
+    setTheme(theme);
+
+    const toggleTheme = () => {
+      html.classList.contains("dark") ? setTheme("light") : setTheme("dark");
+    };
+
+    window.onload = () => {
+      fixThemeToggleIcon(theme);
+
+      let defaultActivePanel = document.querySelector(".accordion.active");
+      if (defaultActivePanel) {
+        defaultActivePanel.nextElementSibling.style.maxHeight =
+          defaultActivePanel.nextElementSibling.scrollHeight + "px";
+      }
+
+      
+      try {
+        const navContainers = document.querySelectorAll('div.flex.flex-row.items-center.gap-4.font-bold, div');
+        navContainers.forEach(container => {
+          
+          if (container.textContent.trim().startsWith("Home") && container.textContent.includes("Blog") && !container.innerHTML.includes('gallery/')) {
+            const galleryLink = document.createElement('a');
+            galleryLink.href = '\/gallery\/';
+            galleryLink.className = 'hover:text-amber-500 transition-colors ml-4';
+            galleryLink.textContent = 'Gallery';
+            container.appendChild(galleryLink);
+          }
+        });
+      } catch(e) { console.log(e); }
+    };
+
+    window.onresize = () => {
+      let defaultActivePanel = document.querySelector(".accordion.active");
+      if (defaultActivePanel) {
+        defaultActivePanel.nextElementSibling.style.maxHeight =
+          defaultActivePanel.nextElementSibling.scrollHeight + "px";
+      }
+    };
+  </script>
+</head>
+
+<style>
+   
+  .theme-toggle, .bi-brightness-high, .bi-moon {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    pointer-events: none !important;
+  }
+</style>
+
+<style>
+   
+  .theme-toggle, .bi-brightness-high, .bi-moon {
+    display: none !important;
+  }
+  
+   
+  html, body, main {
+    background-color: #1a120b !important;
+    color: #f5f5f5 !important;
+  }
+</style>
+<body class="h-screen p-2 m-auto max-w-4xl flex flex-col">
+    
+    <header
+  class="nav flex flex-row row py-2 mb-6 w-full border-b border-gray-700 dark:border-gray-300 justify-between"
+>
+  <div>
+    <a class="nav-menu-item" href="http://localhost:1313/">Home</a>
+    <a class="nav-menu-item" href="/blog">Blog</a>
+  </div>
+  <div>
+    <a class="mr-4 no-underline" href="/search">
+      <i class="bi bi-search"></i>
+    </a>
+    <i
+      class="bi bi-brightness-high theme-toggle text-blue-500 hover:text-blue-700 dark:text-yellow-300 dark:hover:text-yellow-500 cursor-pointer text-lg mr-9 sm:mr-0"
+      onclick="toggleTheme()"
+    ></i>
+  </div>
+</header>
+
+
+
+    
+    <main class="grow">
+<div class="max-w-6xl mx-auto px-4 py-4">
+
+  
+  <div class="pinterest-masonry-wall">
+    
+    
+
+    
+      
+        
+        
+          
+          <div class="pinterest-masonry-card" data-index="0" onclick="openLightbox( 0 )">
+            <img id="img-0" src="/gallery/photography/photo1.JPG" alt="Portfolio Asset">
+            
+            
+            
+            <div class="image-description-box" id="desc-0">
+              
+            </div>
+          </div>
+
+        
+      
+        
+        
+          
+          <div class="pinterest-masonry-card" data-index="1" onclick="openLightbox( 1 )">
+            <img id="img-1" src="/gallery/photography/photo2.JPG" alt="Portfolio Asset">
+            
+            
+            
+            <div class="image-description-box" id="desc-1">
+              
+            </div>
+          </div>
+
+        
+      
+        
+        
+          
+          <div class="pinterest-masonry-card" data-index="2" onclick="openLightbox( 2 )">
+            <img id="img-2" src="/gallery/photography/photo3.JPG" alt="Portfolio Asset">
+            
+            
+            
+            <div class="image-description-box" id="desc-2">
+              
+            </div>
+          </div>
+
+        
+      
+    
+  </div>
+</div>
+
+
+<div style="margin-top: 5rem;">
+  <div class="flex flex-row justify-around my-2">
+  <h3 class="mb-1 mt-1 text-left mr-4">
+    
+    <a
+      href="/gallery/paintings/"
+      title="Paintings"
+    >
+      <i class="nav-menu bi bi-caret-left"></i>
+    </a>
+    
+  </h3>
+  <h3 class="mb-1 mt-1 text-left ml-4">
+    
+    <a
+      href="/gallery/travel/"
+      title="Travel"
+    >
+      <i class="nav-menu bi bi-caret-right"></i>
+    </a>
+    
+  </h3>
+</div>
+
+</div>
+
+
+<div id="gallery-lightbox-modal" class="lightbox-overlay" onclick="handleOverlayClick(event)">
+  <span class="lightbox-close-btn" onclick="closeLightbox()">&times;</span>
+  
+  
+  <button class="lightbox-nav-btn left-arrow" onclick="navigateLightbox(-1)" aria-label="Previous image">
+    <svg viewBox="0 0 16 16" xmlns="http://w3.org" style="width: 28px; height: 28px; fill: currentColor;"><path d="M10 12.796V3.204L4.519 8 10 12.796z"/></svg>
+  </button>
+  
+  <div style="display: flex; flex-direction: column; align-items: center; max-width: 85%;">
+    <img class="lightbox-active-image" id="lightbox-img" src="" alt="Zoomed Asset">
+    <div id="lightbox-caption" class="lightbox-caption-text"></div>
+  </div>
+  
+  
+  <button class="lightbox-nav-btn right-arrow" onclick="navigateLightbox(1)" aria-label="Next image">
+    <svg viewBox="0 0 16 16" xmlns="http://w3.org" style="width: 28px; height: 28px; fill: currentColor;"><path d="M6 12.796V3.204L11.481 8 6 12.796z"/></svg>
+  </button>
+</div>
+
+<style>
+  .pinterest-masonry-wall {
+    column-count: 3;
+    column-gap: 24px;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  @media (max-width: 900px) { .pinterest-masonry-wall { column-count: 2; } }
+  @media (max-width: 600px) { .pinterest-masonry-wall { column-count: 1; } }
+
+  .pinterest-masonry-card {
+    background-color: #171717 !important;
+    border: 1px solid #262626 !important;
+    border-radius: 8px !important;
+    margin-bottom: 24px !important;
+    break-inside: avoid !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4) !important;
+    cursor: zoom-in !important;
+    transition: transform 0.2s ease !important;
+  }
+  .pinterest-masonry-card:hover {
+    transform: scale(1.015) !important;
+    border-color: #38bdf8 !important;
+  }
+  .pinterest-masonry-card img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+  }
+
+  .image-description-box {
+    padding: 12px 14px !important;
+    font-size: 0.88rem !important;
+    line-height: 1.4 !important;
+    color: #d4d4d4 !important;
+    background-color: #1a120b !important;
+    border-top: 1px solid #262626 !important;
+    text-align: left !important;
+    display: none;
+  }
+  
+  .image-description-box:not(:empty) {
+    border-top: 1px solid #262626 !important;
+  }
+
+   
+  .lightbox-overlay {
+    display: none;
+    position: fixed;
+    z-index: 99999 !important;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 18, 11, 0.98);
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+  }
+  .lightbox-active-image {
+    max-width: 100% !important;
+    max-height: 75vh !important;
+    object-fit: contain !important;
+    border-radius: 6px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+  }
+  .lightbox-caption-text {
+    margin-top: 20px;
+    color: #f59e0b;
+    font-size: 1.05rem;
+    text-align: center;
+    font-style: italic;
+    line-height: 1.5;
+    min-height: 24px;
+  }
+  
+   
+  .lightbox-nav-btn {
+    background: transparent !important;
+    border: none !important;
+    color: #f59e0b !important;  
+    cursor: pointer !important;
+    transition: color 0.15s ease, transform 0.15s ease !important;
+    user-select: none;
+    z-index: 100000 !important;
+    padding: 25px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .lightbox-nav-btn:hover {
+    color: #38bdf8 !important;  
+    transform: scale(1.3);
+  }
+  
+  .lightbox-close-btn {
+    position: absolute;
+    top: 24px;
+    right: 44px;
+    color: #a3a3a3;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 100000;
+    transition: color 0.2s ease;
+  }
+  .lightbox-close-btn:hover { color: #ef4444; }
+
+  @media (max-width: 768px) {
+    .lightbox-overlay { padding: 0 15px; }
+  }
+</style>
+
+<script>
+  let currentImgIndex = 0;
+  let totalImages = 0;
+
+  document.addEventListener("DOMContentLoaded", function() {
+    totalImages = document.querySelectorAll('.pinterest-masonry-card').length;
+  });
+
+  function openLightbox(index) {
+    currentImgIndex = parseInt(index);
+    totalImages = document.querySelectorAll('.pinterest-masonry-card').length;
+    updateLightboxContent();
+    document.getElementById('gallery-lightbox-modal').style.display = 'flex';
+    document.addEventListener('keydown', handleKeyboardNav);
+  }
+
+  function updateLightboxContent() {
+    const targetImg = document.getElementById('img-' + currentImgIndex);
+    const targetDesc = document.getElementById('desc-' + currentImgIndex);
+    
+    if (targetImg) {
+      document.getElementById('lightbox-img').src = targetImg.src;
+      const captionText = targetDesc ? targetDesc.innerHTML.trim() : "";
+      document.getElementById('lightbox-caption').innerHTML = captionText;
+    }
+  }
+
+  function navigateLightbox(direction) {
+    currentImgIndex += direction;
+    if (currentImgIndex >= totalImages) currentImgIndex = 0;
+    if (currentImgIndex < 0) currentImgIndex = totalImages - 1;
+    updateLightboxContent();
+  }
+
+  function closeLightbox() {
+    document.getElementById('gallery-lightbox-modal').style.display = 'none';
+    document.removeEventListener('keydown', handleKeyboardNav);
+  }
+
+  function handleKeyboardNav(e) {
+    if (e.key === "ArrowRight") navigateLightbox(1);
+    if (e.key === "ArrowLeft") navigateLightbox(-1);
+    if (e.key === "Escape") closeLightbox();
+  }
+
+  function handleOverlayClick(e) {
+    if (e.target.classList.contains('lightbox-overlay')) {
+      closeLightbox();
+    }
+  }
+</script>
+
+    </main>
+    
+    
+    
+  </body>
+</html>

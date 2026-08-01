@@ -1,0 +1,14 @@
+{
+  "title": "Conferences and Events",
+  "icon": "bi bi-calendar3",
+  "list": [
+    {"name": "WindWorks, Riga (2026)"},
+    {"name": "Ocean Sciences, Glasgow (2026)"},
+    {"name": "EGU conference, Vienna (2025)"},
+    {"name": "AGU conference, Washington D.C (2024)"},
+    {"name": "Ocean Sciences, Online (2022)"},
+    {"name": "Waves and mean flow, Bornö (2022)"},
+    {"name": "Eddies and waves, Hamburg (2021)"},
+    {"name": "Summer School on Oceanic Eastern Boundary Upwelling Systems, Trieste (2019)"}
+  ]
+}

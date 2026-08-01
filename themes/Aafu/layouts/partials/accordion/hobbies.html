@@ -1,0 +1,7 @@
+<ul class="list-disc list-outside pl-6 mb-4">
+  {{ range hugo.Data.hobbies.list }}
+  <li class="text-left" style="margin-bottom: 12px;">
+    <strong>{{ .category }}:</strong> {{ .items }}
+  </li>
+  {{ end }}
+</ul>

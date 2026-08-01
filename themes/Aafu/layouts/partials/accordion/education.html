@@ -1,0 +1,7 @@
+<ul class="list-disc list-outside pl-6 mb-4">
+  {{ range hugo.Data.education.list }}
+  <li class="text-left" style="margin-bottom: 12px;">
+    {{ .degree | markdownify }}
+  </li>
+  {{ end }}
+</ul>

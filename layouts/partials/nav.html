@@ -1,0 +1,18 @@
+<div class="flex flex-row items-center justify-between text-neutral-500 mb-8 w-full">
+  <!-- Left Side: Interactive Navigation Links Array -->
+  <div class="flex flex-row items-center gap-4 font-bold select-none text-neutral-100">
+    <a href="{{ .Site.BaseURL | relURL }}" class="hover:text-amber-500 transition-colors">Home</a>
+    <a href="{{ "blog/" | relURL }}" class="hover:text-amber-500 transition-colors">Blog</a>
+    
+    <!-- GALLERY LINK INJECTION: Safely appends Gallery to the top menu row -->
+    <a href="{{ "gallery/" | relURL }}" class="hover:text-amber-500 transition-colors">Gallery</a>
+  </div>
+
+  <!-- Right Side: Native Search Window Toggle Trigger -->
+  <div class="text-neutral-100 flex flex-row items-center gap-4 font-bold select-none">
+    <i
+      class="bi bi-search hover:text-amber-500 text-xl font-bold cursor-pointer"
+      onclick="toggleSearchWindow()"
+    ></i>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="diary-feed" style="margin-top: 3.5rem; border-top: 1px solid #262626; padding-top: 2rem; width: 100%;">
+    
+    <!-- Latest Blog Section -->
+    <h3 style="color: #ffb703; margin-bottom: 1.25rem; font-size: 1.25rem; font-weight: bold; text-align: left;">📰 Latest Entry</h3>
+    {{ range first 1 (where .Site.RegularPages "Section" "blog") }}
+    <a href="{{ .Permalink }}" style="display: flex; gap: 1.25rem; text-decoration: none; background: #171717; padding: 1rem; border-radius: 8px; border: 1px solid #262626; transition: background 0.2s; margin-bottom: 2.5rem; text-align: left;" onmouseover="this.style.background='#262626'" onmouseout="this.style.background='#171717'">
+        {{ with .Params.image }}
+        <img src="{{ . | relURL }}" alt="{{ $.Title }}" style="width: 100px; height: 100px; border-radius: 6px; object-fit: cover;">
+        {{ end }}
+        <div style="display: flex; flex-direction: column; justify-content: center; text-align: left;">
+            <h4 style="color: #ffb703; margin: 0; font-size: 1.1rem; font-weight: 600;">{{ .Title }}</h4>
+            <span style="color: #737373; font-size: 0.85rem; margin-top: 0.25rem;">{{ .Date.Format "January 2, 2006" }}</span>
+        </div>
+    </a>
+    {{ end }}
+
+    <!-- Featured Galleries Section -->
+    <h3 style="color: #ffb703; margin-bottom: 1.25rem; font-size: 1.25rem; font-weight: bold; text-align: left;">🖼️ Explore Galleries</h3>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+        <a href="/gallery/#travel" style="background: #171717; border: 1px solid #262626; padding: 1.25rem; text-align: center; border-radius: 8px; text-decoration: none; color: #ffb703; transition: background 0.2s;" onmouseover="this.style.background='#262626'" onmouseout="this.style.background='#171717'">
+            <span style="display: block; font-size: 1.75rem; margin-bottom: 0.5rem;">✈️</span>
+            <span style="font-size: 0.9rem; font-weight: 500;">Travel</span>
+        </a>
+        <a href="/gallery/#photography" style="background: #171717; border: 1px solid #262626; padding: 1.25rem; text-align: center; border-radius: 8px; text-decoration: none; color: #ffb703; transition: background 0.2s;" onmouseover="this.style.background='#262626'" onmouseout="this.style.background='#171717'">
+            <span style="display: block; font-size: 1.75rem; margin-bottom: 0.5rem;">📷</span>
+            <span style="font-size: 0.9rem; font-weight: 500;">Photo</span>
+        </a>
+        <a href="/gallery/#paintings" style="background: #171717; border: 1px solid #262626; padding: 1.25rem; text-align: center; border-radius: 8px; text-decoration: none; color: #ffb703; transition: background 0.2s;" onmouseover="this.style.background='#262626'" onmouseout="this.style.background='#171717'">
+            <span style="display: block; font-size: 1.75rem; margin-bottom: 0.5rem;">🎨</span>
+            <span style="font-size: 0.9rem; font-weight: 500;">Paintings</span>
+        </a>
+    </div>
+</div>

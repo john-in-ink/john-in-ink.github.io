@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gallery on John In Ink</title>
+    <link>http://localhost:1313/gallery/</link>
+    <description>Recent content in Gallery on John In Ink</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Aug 2026 12:02:00 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/gallery/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Travel</title>
+      <link>http://localhost:1313/gallery/travel/</link>
+      <pubDate>Sat, 01 Aug 2026 12:02:00 +0200</pubDate>
+      <guid>http://localhost:1313/gallery/travel/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Photography</title>
+      <link>http://localhost:1313/gallery/photography/</link>
+      <pubDate>Sat, 01 Aug 2026 12:01:00 +0200</pubDate>
+      <guid>http://localhost:1313/gallery/photography/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Paintings</title>
+      <link>http://localhost:1313/gallery/paintings/</link>
+      <pubDate>Sat, 01 Aug 2026 12:00:00 +0200</pubDate>
+      <guid>http://localhost:1313/gallery/paintings/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
