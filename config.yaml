@@ -1,5 +1,5 @@
 theme: Aafu
-baseURL: https://github.io
+baseURL: https://john-in-ink.github.io/
 locale: en-us
 build:
   writeStats: true
