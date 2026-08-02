@@ -2,11 +2,11 @@
 <!-- Import Cloudflare Turnstile CAPTCHA Library Script -->
 <script src="https://cloudflare.com" async defer></script>
 
-<!-- Outer Container Centering the Entire Content block -->
-<div class="max-w-4xl mx-auto px-4 py-8 flex flex-col items-center" style="background-color: #1a120b; color: #f5f5f5; font-family: 'Roboto Mono', Courier, monospace;">
+<!-- Parent Outer Grid Frame - Dynamically switches from vertical (mobile) to horizontal (desktop) -->
+<div class="max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center justify-center gap-12 lg:gap-24" style="background-color: #1a120b; color: #f5f5f5; font-family: 'Roboto Mono', Courier, monospace; min-h: 80vh;">
   
-  <!-- Outer Wrapper to Restrict and Lock Width to 480px and Center Content -->
-  <div style="width: 100%; max-width: 480px; text-align: left; display: flex; flex-direction: column;">
+  <!-- LEFT COLUMN: The Contact Form (Locks to 450px for tight structure alignment) -->
+  <div style="width: 100%; max-width: 450px; text-align: left; display: flex; flex-direction: column;">
     
     <!-- Clean Centered Minimalist Header -->
     <div style="border-left: 3px solid #7c2d12; padding-left: 1rem; margin-bottom: 3.5rem;">
@@ -14,14 +14,13 @@
         Get in Touch
       </p>
       <p style="font-size: 0.9rem; color: #a1a1aa; margin: 0.35rem 0 0 0; line-height: 1.5;">
-        Your message is relayed privately. A response will follow within 48 hours
+        Your message is relayed privately. A response will follow within 48 hours.
       </p>
     </div>
 
-    <!-- Form Section Layout Container (CHANGE 'PASTE_YOUR_FORMSPREE_URL_HERE' TO YOUR FORMSPREE LINK) -->
+    <!-- Form Section Container (CHANGE 'PASTE_YOUR_FORMSPREE_URL_HERE' TO YOUR FORMSPREE LINK) -->
     <form action="https://formspree.io/f/meeybyvy" method="POST" style="display: flex; flex-direction: column; gap: 2.5rem; width: 100%;">
       
-      <!-- Custom Page Redirection Path Target Trigger -->
       <input type="hidden" name="_next" value="https://github.io">
 
       <!-- Name Parameter Input Row Element -->
@@ -65,5 +64,12 @@
       </button>
     </form>
   </div>
+
+  <!-- RIGHT COLUMN: Elegant Visual Frame (Hidden completely on mobile, jumps next to the form on desktop screens) -->
+  <div class="hidden md:flex items-center justify-center" style="flex: 1; max-width: 450px;">
+    <!-- I linked a high-end minimalist retro line-art telephone animation that matches your brown/cream aesthetic perfectly -->
+    <img src="https://giphy.com" alt="Minimalist Telephone Connection Loop" style="width: 100%; height: auto; opacity: 0.75; filter: sepia(0.4) contrast(1.1); mix-blend-mode: lighten;" />
+  </div>
+
 </div>
 {{ end }}
