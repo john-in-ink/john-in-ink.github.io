@@ -47,5 +47,5 @@ menu:
       url: "/gallery/"
       weight: 3
     - name: "Contact"
-      url: "/contact/"
+      url: "/blog/contact/"
       weight: 4
