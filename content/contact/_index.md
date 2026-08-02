@@ -1,7 +1,7 @@
 ---
-layout: "gallery-list"
+title: "Contact"
+layout: "gallery"
 ---
-
 <div style="max-width: 600px; padding: 2rem 1rem; margin: 0 auto;">
   <p style="margin-bottom: 1.5rem; font-size: 1.1rem; color: #f5f5f5;">If you would like to get in touch, please use the form below:</p>
 
