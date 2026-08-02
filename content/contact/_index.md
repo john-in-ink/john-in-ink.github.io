@@ -1,5 +1,5 @@
 ---
-layout: "gallery"
+layout: "gallery-list"
 ---
 
 <div style="max-width: 600px; padding: 2rem 1rem; margin: 0 auto;">
@@ -29,4 +29,5 @@ layout: "gallery"
     </button>
   </form>
 </div>
+
 
