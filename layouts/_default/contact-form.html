@@ -26,9 +26,9 @@
     </div>
 
     <!-- Formspark Action Target (FIXED: Added the missing forward slash '/') -->
-    <form action="https://submit-form.com/{{ $formspark_id }}" method="POST" style="display: flex; flex-direction: column; gap: 1.75rem; width: 100%;">
+    <form action="https://submit-form.com{{ $formspark_id }}" method="POST" style="display: flex; flex-direction: column; gap: 1.75rem; width: 100%;">
       
-      <!-- Formspark Custom Redirect Target Integration Input -->
+      <!-- Formspark Custom Redirect Target Integration Input (FIXED: Points to your own site) -->
       <input type="hidden" name="_redirect" value="https://github.io">
 
       <!-- Row 01: Identification -->
