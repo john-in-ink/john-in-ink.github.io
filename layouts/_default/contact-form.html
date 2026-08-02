@@ -1,10 +1,5 @@
 {{ define "main" }}
 
-<!-- ========================================================================= -->
-<!-- FORMSPARK CONFIGURATION SLOT (REPLACE WITH YOUR FORMSPARK ID)             -->
-{{ $formspark_id := "n9wsCmz9X" }}
-<!-- ========================================================================= -->
-
 <!-- Import Cloudflare Turnstile CAPTCHA Library Script -->
 <script src="https://cloudflare.com" async defer></script>
 
@@ -25,11 +20,8 @@
       </p>
     </div>
 
-    <!-- Formspark Action Target (FIXED: Added the missing forward slash '/') -->
-    <form action="https://submit-form.com{{ $formspark_id }}" method="POST" style="display: flex; flex-direction: column; gap: 1.75rem; width: 100%;">
-      
-      <!-- Formspark Custom Redirect Target Integration Input (FIXED: Points to your own site) -->
-      <input type="hidden" name="_redirect" value="https://github.io">
+    <!-- Formspark Action Target (Explicitly using your exact unique endpoint path) -->
+    <form action="https://submit-form.com" method="POST" style="display: flex; flex-direction: column; gap: 1.75rem; width: 100%;">
 
       <!-- Row 01: Identification -->
       <div style="display: flex; flex-direction: column; gap: 0.4rem;">
