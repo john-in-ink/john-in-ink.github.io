@@ -1,9 +1,9 @@
 ---
-layout: "list"
+layout: "gallery"
 ---
 
-<div style="max-w: 600px; padding-top: 2rem;">
-  <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">If you would like to get in touch, please use the form below:</p>
+<div style="max-width: 600px; padding: 2rem 1rem; margin: 0 auto;">
+  <p style="margin-bottom: 1.5rem; font-size: 1.1rem; color: #f5f5f5;">If you would like to get in touch, please use the form below:</p>
 
   <form action="https://formspree.io" method="POST" style="display: flex; flex-direction: column; gap: 1.25rem;">
     
@@ -29,3 +29,4 @@ layout: "list"
     </button>
   </form>
 </div>
+
