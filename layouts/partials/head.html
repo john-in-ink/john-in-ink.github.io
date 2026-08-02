@@ -130,16 +130,25 @@
       }
 
       // INTEGRATED NAV PATCH: Dynamically appends the missing Gallery tab to the menu layout natively
+            // INTEGRATED NAV PATCH: Dynamically appends the missing tabs to the menu layout natively
       try {
         const navContainers = document.querySelectorAll('div.flex.flex-row.items-center.gap-4.font-bold, div');
         navContainers.forEach(container => {
           // Identify the exact container box holding the text links "Home" and "Blog"
           if (container.textContent.trim().startsWith("Home") && container.textContent.includes("Blog") && !container.innerHTML.includes('gallery/')) {
+            // Append Gallery Link
             const galleryLink = document.createElement('a');
             galleryLink.href = '{{ "gallery/" | relURL }}';
             galleryLink.className = 'hover:text-amber-500 transition-colors ml-4';
             galleryLink.textContent = 'Gallery';
             container.appendChild(galleryLink);
+
+            // Append Contact Link
+            const contactLink = document.createElement('a');
+            contactLink.href = '{{ "contact/" | relURL }}';
+            contactLink.className = 'hover:text-amber-500 transition-colors ml-4';
+            contactLink.textContent = 'Contact';
+            container.appendChild(contactLink);
           }
         });
       } catch(e) { console.log(e); }
