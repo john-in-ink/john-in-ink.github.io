@@ -1,51 +1,51 @@
 {{ define "main" }}
 
 <!-- ========================================================================= -->
-<!-- FORMSPREE CONFIGURATION SLOT (EASY TO CHANGE LATER)                        -->
+<!-- FORMSPREE CONFIGURATION SLOT                                              -->
 {{ $formspree_url := "https://formspree.io/f/meeybyvy" }}
 <!-- ========================================================================= -->
 
 <!-- Import Cloudflare Turnstile CAPTCHA Library Script -->
 <script src="https://cloudflare.com" async defer></script>
 
-<!-- Parent Asymmetrical Grid Frame -->
-<div class="max-w-6xl mx-auto px-4 md:px-8 py-4 flex flex-col md:flex-row items-stretch justify-center gap-8 lg:gap-16 font-mono" style="background-color: #1a120b; color: #f5f5f5; min-h: 75vh;">
+<!-- Outer Container Centering the Entire Content block -->
+<div class="max-w-4xl mx-auto px-4 py-12 flex flex-col items-center justify-center font-mono" style="background-color: #1a120b; color: #f5f5f5; min-h: 75vh;">
   
-  <!-- LEFT COLUMN: Compact Form Core -->
-  <div style="flex: 1.1; max-width: 460px; display: flex; flex-direction: column; justify-content: center; padding: 1rem 0;">
+  <!-- Outer Wrapper to Restrict and Lock Width to 480px -->
+  <div style="width: 100%; max-width: 480px; text-align: left; display: flex; flex-direction: column;">
     
-    <!-- Clean Minimalist Editorial Header Box with Ringing Phone Emoji -->
-    <div style="border-left: 3px solid #7c2d12; padding-left: 1.25rem; margin-bottom: 2.25rem; text-align: justify; text-justify: inter-word;">
+    <!-- Clean Minimalist Left-Aligned Header Box with Active Ringing Phone Emoji -->
+    <div style="border-left: 3px solid #7c2d12; padding-left: 1.25rem; margin-bottom: 3.5rem; text-align: left;">
       <p style="font-size: 1.25rem; letter-spacing: -0.5px; color: #d4d4d8; margin: 0 0 0.5rem 0; font-weight: bold; text-transform: uppercase; display: flex; align-items: center; gap: 0.6rem;">
         Get in Touch 
-        <span class="phone-icon" style="display: inline-block; font-size: 1.1rem; cursor: pointer;">📞</span>
+        <span class="phone-pulse" style="display: inline-block; font-size: 1.1rem; animation: dramaticRing 1.5s infinite ease-in-out;">📞</span>
       </p>
-      <p style="font-size: 0.88rem; color: #a1a1aa; margin: 0; line-height: 1.5; letter-spacing: -0.1px;">
+      <p style="font-size: 0.9rem; color: #a1a1aa; margin: 0; line-height: 1.6; letter-spacing: -0.1px;">
         Your message is relayed privately. A response will follow within 48 hours.
       </p>
     </div>
 
     <!-- Tightly Spaced Form Grid Container -->
-    <form action="{{ $formspree_url }}" method="POST" style="display: flex; flex-direction: column; gap: 1.5rem; width: 100%;">
+    <form action="{{ $formspree_url }}" method="POST" style="display: flex; flex-direction: column; gap: 1.75rem; width: 100%;">
       
       <input type="hidden" name="_next" value="https://github.io">
 
       <!-- Row 01: Identification -->
-      <div style="display: flex; flex-direction: column; gap: 0.35rem;">
+      <div style="display: flex; flex-direction: column; gap: 0.4rem;">
         <label style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: #7c2d12; font-weight: bold;">01. Identification</label>
-        <input type="text" name="name" required placeholder="Enter your name..." style="width: 100%; padding: 0.6rem 0.75rem; border: 1px dashed #444; border-radius: 4px; background: #2a1f15; color: #f5f5f5; font-size: 0.9rem; font-family: inherit; outline: none; transition: all 0.25s ease;" onfocus="this.style.borderColor='#7c2d12'; this.style.background='#36271a';" onblur="this.style.borderColor='#444'; this.style.background='#2a1f15';">
+        <input type="text" name="name" required placeholder="Enter your name..." style="width: 100%; padding: 0.7rem 0.85rem; border: 1px dashed #444; border-radius: 4px; background: #2a1f15; color: #f5f5f5; font-size: 0.9rem; font-family: inherit; outline: none; transition: all 0.25s ease;" onfocus="this.style.borderColor='#7c2d12'; this.style.background='#36271a';" onblur="this.style.borderColor='#444'; this.style.background='#2a1f15';">
       </div>
       
       <!-- Row 02: Return Address -->
-      <div style="display: flex; flex-direction: column; gap: 0.35rem;">
+      <div style="display: flex; flex-direction: column; gap: 0.4rem;">
         <label style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: #7c2d12; font-weight: bold;">02. Return Address</label>
-        <input type="email" name="email" required placeholder="Enter your email address..." style="width: 100%; padding: 0.6rem 0.75rem; border: 1px dashed #444; border-radius: 4px; background: #2a1f15; color: #f5f5f5; font-size: 0.9rem; font-family: inherit; outline: none; transition: all 0.25s ease;" onfocus="this.style.borderColor='#7c2d12'; this.style.background='#36271a';" onblur="this.style.borderColor='#444'; this.style.background='#2a1f15';">
+        <input type="email" name="email" required placeholder="Enter your email address..." style="width: 100%; padding: 0.7rem 0.85rem; border: 1px dashed #444; border-radius: 4px; background: #2a1f15; color: #f5f5f5; font-size: 0.9rem; font-family: inherit; outline: none; transition: all 0.25s ease;" onfocus="this.style.borderColor='#7c2d12'; this.style.background='#36271a';" onblur="this.style.borderColor='#444'; this.style.background='#2a1f15';">
       </div>
 
       <!-- Row 03: Classification -->
-      <div style="display: flex; flex-direction: column; gap: 0.35rem;">
+      <div style="display: flex; flex-direction: column; gap: 0.4rem;">
         <label style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: #7c2d12; font-weight: bold;">03. Classification</label>
-        <select name="subject" required style="width: 100%; padding: 0.6rem 0.75rem; border: 1px dashed #444; border-radius: 4px; background: #2a1f15; color: #a1a1aa; font-size: 0.9rem; font-family: inherit; outline: none; cursor: pointer; transition: all 0.25s ease;" onfocus="this.style.borderColor='#7c2d12'; this.style.color='#f5f5f5'; this.style.background='#36271a';" onblur="this.style.borderColor='#444'; this.style.background='#2a1f15';">
+        <select name="subject" required style="width: 100%; padding: 0.7rem 0.85rem; border: 1px dashed #444; border-radius: 4px; background: #2a1f15; color: #a1a1aa; font-size: 0.9rem; font-family: inherit; outline: none; cursor: pointer; transition: all 0.25s ease;" onfocus="this.style.borderColor='#7c2d12'; this.style.color='#f5f5f5'; this.style.background='#36271a';" onblur="this.style.borderColor='#444'; this.style.background='#2a1f15';">
           <option value="" disabled selected hidden>Select context topic...</option>
           <option value="General Inquiry">General Inquiry</option>
           <option value="Blog Feedback / Critique">Blog Feedback & Critique</option>
@@ -55,9 +55,9 @@
       </div>
       
       <!-- Row 04: Content Log -->
-      <div style="display: flex; flex-direction: column; gap: 0.35rem;">
+      <div style="display: flex; flex-direction: column; gap: 0.4rem;">
         <label style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: #7c2d12; font-weight: bold;">04. Content Log</label>
-        <textarea name="message" rows="4" required placeholder="Write your text message here..." style="width: 100%; padding: 0.6rem 0.75rem; border: 1px dashed #444; border-radius: 4px; background: #2a1f15; color: #f5f5f5; font-size: 0.9rem; font-family: inherit; outline: none; resize: none; line-height: 1.5; transition: all 0.25s ease;" onfocus="this.style.borderColor='#7c2d12'; this.style.background='#36271a';" onblur="this.style.borderColor='#444'; this.style.background='#2a1f15';"></textarea>
+        <textarea name="message" rows="5" required placeholder="Write your text message here..." style="width: 100%; padding: 0.7rem 0.85rem; border: 1px dashed #444; border-radius: 4px; background: #2a1f15; color: #f5f5f5; font-size: 0.9rem; font-family: inherit; outline: none; resize: none; line-height: 1.5; transition: all 0.25s ease;" onfocus="this.style.borderColor='#7c2d12'; this.style.background='#36271a';" onblur="this.style.borderColor='#444'; this.style.background='#2a1f15';"></textarea>
       </div>
 
       <!-- Cloudflare Turnstile Verification Container -->
@@ -66,30 +66,17 @@
       </div>
       
       <!-- Premium Creative Kinetic Action Button Widget -->
-      <button type="submit" class="submit-btn" style="background-color: transparent; color: #7c2d12; border: 1px solid #7c2d12; border-radius: 4px; padding: 0.8rem 2.5rem; cursor: pointer; font-weight: bold; font-family: inherit; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; align-self: flex-start; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); position: relative; overflow: hidden;">
+      <button type="submit" class="submit-btn" style="background-color: transparent; color: #7c2d12; border: 1px solid #7c2d12; border-radius: 4px; padding: 0.85rem 2.5rem; cursor: pointer; font-weight: bold; font-family: inherit; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; align-self: flex-start; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); position: relative; overflow: hidden;">
         <span class="btn-text" style="position: relative; z-index: 2;">Send →</span>
       </button>
     </form>
-  </div>
-
-  <!-- RIGHT COLUMN: Edge-to-Edge Full Vertical Magazine Wrap Container -->
-  <div class="hidden md:block" style="flex: 1.2; max-width: 520px; position: relative; min-height: 100%;">
-    <div style="position: absolute; inset: 0; width: 100%; height: 100%; border: 1px dashed #444; border-radius: 4px; overflow: hidden; background-color: #0b0704;">
-      <img src="/images/telescope.jpeg" alt="Equatorial Telescope Detail" style="width: 100%; height: 100%; object-fit: cover; filter: sepia(0.25) brightness(0.75) contrast(1.2); opacity: 0.95; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);" onmouseover="this.style.transform='scale(1.04)';" onmouseout="this.style.transform='scale(1)';" />
-    </div>
   </div>
 
 </div>
 
 <!-- High-End Interactive Animation Profiles -->
 <style>
-  /* Dynamic Typewriter Dramatic Vibration Loop on Hover */
-  .phone-icon:hover {
-    animation: dramaticRing 0.15s infinite linear alternate !important;
-    color: #ff7a45;
-  }
-
-  /* Slick Background Slide and Typography Expansion Effect on Send Widget */
+  /* Dynamic Background Slide and Typography Expansion Effect on Send Widget */
   .submit-btn::before {
     content: '';
     position: absolute;
@@ -111,10 +98,15 @@
     transform-origin: left;
   }
 
+  /* Automatic Subtle Pulsing Ring Effect for the Phone Emoji */
   @keyframes dramaticRing {
-    0% { transform: translate(1px, 1px) rotate(-12deg); }
-    50% { transform: translate(-1px, -1px) rotate(12deg); }
-    100% { transform: translate(1px, -1px) rotate(-12deg); }
+    0% { transform: scale(1) rotate(0deg); }
+    10% { transform: scale(1.1) rotate(-10deg); }
+    20% { transform: scale(1.1) rotate(10deg); }
+    30% { transform: scale(1.1) rotate(-10deg); }
+    40% { transform: scale(1.1) rotate(10deg); }
+    50% { transform: scale(1) rotate(0deg); }
+    100% { transform: scale(1) rotate(0deg); }
   }
 </style>
 {{ end }}
