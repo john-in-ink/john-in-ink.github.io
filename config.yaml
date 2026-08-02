@@ -1,3 +1,8 @@
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
 theme: Aafu
 baseURL: https://john-in-ink.github.io/
 locale: en-us
@@ -25,16 +30,11 @@ security:
     permissions:
       disable: true
 
-ignorefiles:
+ignoreFiles:
   - "markdown-syntax.md"
   - "rich-content.md"
 
-markup:
-  goldmark:
-    renderer:
-      unsafe: true
-
-# NAVBAR LINK DEFINITIONS: Positions Home, Blog, and Gallery across the top
+# NAVBAR LINK DEFINITIONS: Positions Home, Blog, Gallery, and Contact across the top
 menu:
   main:
     - name: "Home"
