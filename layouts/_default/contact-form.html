@@ -1,7 +1,64 @@
 {{ define "main" }}
-<div class="max-w-4xl mx-auto px-4 py-8">
-  <main class="prose prose-stone dark:prose-invert max-w-none">
-    {{ .Content }}
-  </main>
+<!-- Import Cloudflare Turnstile CAPTCHA Library Script -->
+<script src="https://cloudflare.com" async defer></script>
+
+<div class="max-w-4xl mx-auto px-4 py-8" style="background-color: #1a120b; color: #f5f5f5; font-family: 'Roboto Mono', Courier, monospace;">
+  
+  <!-- Subtle Typewriter Notebook Style Header Accent Banner -->
+  <div style="border-left: 3px solid #7c2d12; padding-left: 1rem; margin-bottom: 3.5rem; text-align: left;">
+    <p style="font-size: 1.1rem; letter-spacing: -0.3px; color: #d4d4d8; margin: 0; font-weight: bold;">
+      // TRANSMIT SIGNATURES
+    </p>
+    <p style="font-size: 0.9rem; color: #a1a1aa; margin: 0.25rem 0 0 0;">
+      Leave a mark in ink. Your message will be relayed privately.
+    </p>
+  </div>
+
+  <!-- CHANGE 'PASTE_YOUR_FORMSPREE_URL_HERE' TO YOUR FORMSPREE LINK -->
+  <form action="PASTE_YOUR_FORMSPREE_URL_HERE" method="POST" style="display: flex; flex-direction: column; gap: 2.5rem; max-w: 600px; margin: 0 auto; text-align: left;">
+    
+    <!-- Custom Page Redirection Path Target Trigger -->
+    <input type="hidden" name="_next" value="https://github.io">
+
+    <!-- Name Parameter Input Row Element -->
+    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+      <label style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #7c2d12; font-weight: bold;">01. Identification</label>
+      <input type="text" name="name" required placeholder="Enter your name..." style="width: 100%; padding: 0.75rem; border: 1px dashed #444; border-radius: 4px; background: #2a1f15; color: #f5f5f5; font-size: 0.95rem; font-family: inherit; outline: none; transition: border-color 0.3s;" onfocus="this.style.borderColor='#7c2d12'" onblur="this.style.borderColor='#444'">
+    </div>
+    
+    <!-- Email Parameter Input Row Element -->
+    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+      <label style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #7c2d12; font-weight: bold;">02. Return Address</label>
+      <input type="email" name="email" required placeholder="Enter your email address..." style="width: 100%; padding: 0.75rem; border: 1px dashed #444; border-radius: 4px; background: #2a1f15; color: #f5f5f5; font-size: 0.95rem; font-family: inherit; outline: none; transition: border-color 0.3s;" onfocus="this.style.borderColor='#7c2d12'" onblur="this.style.borderColor='#444'">
+    </div>
+
+    <!-- Structured Subject Selection Category Row Component -->
+    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+      <label style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #7c2d12; font-weight: bold;">03. Classification</label>
+      <select name="subject" required style="width: 100%; padding: 0.75rem; border: 1px dashed #444; border-radius: 4px; background: #2a1f15; color: #a1a1aa; font-size: 0.95rem; font-family: inherit; outline: none; cursor: pointer; transition: border-color 0.3s;" onfocus="this.style.borderColor='#7c2d12'; this.style.color='#f5f5f5'" onblur="this.style.borderColor='#444'">
+        <option value="" disabled selected hidden>Select context topic...</option>
+        <option value="General Inquiry">General Inquiry</option>
+        <option value="Blog Feedback / Critique">Blog Feedback & Critique</option>
+        <option value="Academic Discussion">Academic Discussion</option>
+        <option value="Just Saying Hi">Just Saying Hi</option>
+      </select>
+    </div>
+    
+    <!-- Text Area Message Layout Box Row Container -->
+    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+      <label style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #7c2d12; font-weight: bold;">04. Content Log</label>
+      <textarea name="message" rows="6" required placeholder="Write your text message here..." style="width: 100%; padding: 0.75rem; border: 1px dashed #444; border-radius: 4px; background: #2a1f15; color: #f5f5f5; font-size: 0.95rem; font-family: inherit; outline: none; resize: vertical; line-height: 1.6; transition: border-color 0.3s;" onfocus="this.style.borderColor='#7c2d12'" onblur="this.style.borderColor='#444'"></textarea>
+    </div>
+
+    <!-- Cloudflare Turnstile Site Key Container -->
+    <div style="margin-top: 0.5rem; display: flex; justify-content: flex-start;">
+      <div class="cf-turnstile" data-sitekey="YOUR_CLOUDFLARE_TURNSTILE_SITE_KEY" data-theme="dark"></div>
+    </div>
+    
+    <!-- Premium Industrial Styled Action Button Widget -->
+    <button type="submit" style="background-color: transparent; color: #7c2d12; border: 1px solid #7c2d12; border-radius: 4px; padding: 1rem 2.5rem; cursor: pointer; font-weight: bold; font-family: inherit; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; align-self: flex-start; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);" onmouseover="this.style.backgroundColor='#7c2d12'; this.style.color='#ffffff'; this.style.letterSpacing='2px'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#7c2d12'; this.style.letterSpacing='1.5px'">
+      Commit to Log →
+    </button>
+  </form>
 </div>
 {{ end }}
