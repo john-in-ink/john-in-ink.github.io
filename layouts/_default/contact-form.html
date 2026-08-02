@@ -1,8 +1,8 @@
 {{ define "main" }}
 
 <!-- ========================================================================= -->
-<!-- FORMSPREE CONFIGURATION SLOT                                              -->
-{{ $formspree_url := "https://formspree.io/f/meeybyvy" }}
+<!-- FORMSPARK CONFIGURATION SLOT (REPLACE WITH YOUR FORMSPARK ID)             -->
+{{ $formspark_id := "n9wsCmz9X" }}
 <!-- ========================================================================= -->
 
 <!-- Import Cloudflare Turnstile CAPTCHA Library Script -->
@@ -25,10 +25,11 @@
       </p>
     </div>
 
-    <!-- Tightly Spaced Form Grid Container -->
-    <form action="{{ $formspree_url }}" method="POST" style="display: flex; flex-direction: column; gap: 1.75rem; width: 100%;">
+    <!-- Formspark Action Target -->
+    <form action="https://submit-form.com{{ $formspark_id }}" method="POST" style="display: flex; flex-direction: column; gap: 1.75rem; width: 100%;">
       
-      <input type="hidden" name="_next" value="https://github.io">
+      <!-- Formspark Custom Redirect Target Integration Input -->
+      <input type="hidden" name="_redirect" value="https://github.io">
 
       <!-- Row 01: Identification -->
       <div style="display: flex; flex-direction: column; gap: 0.4rem;">
