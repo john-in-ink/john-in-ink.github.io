@@ -24,14 +24,14 @@
     <div style="border-left: 3px solid #7c2d12; padding-left: 1.25rem; margin-bottom: 3.5rem; text-align: left;">
       <p style="font-size: 1.25rem; letter-spacing: -0.5px; color: #d4d4d8; margin: 0 0 0.5rem 0; font-weight: bold; text-transform: uppercase; display: flex; align-items: center; gap: 0.6rem;">
         Get in Touch 
-        <span class="phone-pulse" style="display: inline-block; font-size: 1.1rem; animation: dramaticRing 1.5s infinite ease-in-out;">📞</span>
+        <span class="phone-pulse" style="display: inline-block; font-size: 1.1rem; animation: dramaticRing 1.5s infinite ease-in-out;">✉️</span>
       </p>
       <p style="font-size: 0.9rem; color: #a1a1aa; margin: 0; line-height: 1.6; letter-spacing: -0.1px;">
         Your message is relayed privately. A response will follow within 48 hours.
       </p>
     </div>
 
-    <!-- Direct HTML Native API target setup (Notice the /ajax/ addition in action URL) -->
+    <!-- Corrected Base Action URL Path without structural modifiers -->
     <form id="contact-form" action="https://submit-form.com" method="POST" style="display: flex; flex-direction: column; gap: 1.75rem; width: 100%;">
 
       <!-- Row 01: Identification -->
@@ -73,7 +73,7 @@
 
 </div>
 
-<!-- Handles AJAX Submission to ensure data is transmitted accurately -->
+<!-- Handles AJAX Submission using standard URL-Encoded Form structures -->
 <script>
   document.getElementById("contact-form").addEventListener("submit", function(e) {
     e.preventDefault(); 
@@ -85,33 +85,23 @@
     button.disabled = true;
     buttonText.innerText = "Processing...";
 
-    // Explicitly parse form values into an object to prevent empty payload transmission
-    const formEntries = new FormData(form);
-    const dataPayload = {};
-    formEntries.forEach((value, key) => {
-      dataPayload[key] = value;
-    });
+    // Uses native URLSearchParams to process input arrays exactly like a classic HTML form
+    const formData = new URLSearchParams(new FormData(form));
 
-    // Native AJAX Fetch request structure to background endpoint
     fetch(form.action, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/x-www-form-urlencoded",
         "Accept": "application/json"
       },
-      body: JSON.stringify(dataPayload)
+      body: formData.toString()
     })
     .then(response => {
       if (response.ok) {
-        // Triggers popup only if Formspark successfully logs data
         document.getElementById("thank-you-popup").style.display = "flex";
         form.reset();
       } else {
-        return response.json().then(err => {
-          alert("Server Error: " + (err.message || "Check settings."));
-        }).catch(() => {
-          alert("Data parsing failed on submission.");
-        });
+        alert("Submission failed. Status: " + response.status);
       }
     })
     .catch(error => {
