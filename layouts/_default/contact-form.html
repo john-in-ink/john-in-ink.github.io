@@ -31,7 +31,7 @@
       </p>
     </div>
 
-    <!-- Routed to your custom Google Script Web App Deployment pipeline -->
+    <!-- Routed to your live Google Script Web App Deployment pipeline -->
     <form id="contact-form" action="https://google.com" method="POST" style="display: flex; flex-direction: column; gap: 1.75rem; width: 100%;">
 
       <!-- Row 01: Identification -->
@@ -73,10 +73,10 @@
 
 </div>
 
-<!-- Handles AJAX Submission directly to the sheet backend mapping array attributes -->
+<!-- Handles AJAX Submission with clear window intercept routines -->
 <script>
   document.getElementById("contact-form").addEventListener("submit", function(e) {
-    e.preventDefault(); 
+    e.preventDefault(); // Prevents Google's 'doGet function not found' screen redirect entirely
     
     const form = this;
     const button = document.getElementById("submit-button");
@@ -87,13 +87,14 @@
 
     fetch(form.action, {
       method: "POST",
-      mode: "no-cors",
+      mode: "no-cors", // Crucial network flag to handle Google spreadsheet inputs cleanly
       headers: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
       body: new URLSearchParams(new FormData(form)).toString()
     })
     .then(() => {
+      // Fires the inline custom modal popup smoothly on screen
       document.getElementById("thank-you-popup").style.display = "flex";
       form.reset();
     })
