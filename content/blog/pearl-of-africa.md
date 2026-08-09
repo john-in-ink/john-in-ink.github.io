@@ -1,6 +1,6 @@
 ---
 title: "Pearl of Africa?"
-date: 2026-08-10T00:45:00+02:00
+date: 2026-08-09T00:45:00+02:00
 layout: "post"
 type: "post"
 draft: false
