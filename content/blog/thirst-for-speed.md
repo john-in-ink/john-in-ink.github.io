@@ -6,6 +6,7 @@ type: "post"
 draft: false
 toc: false
 image: "images/bmw-e30-dtm.jpg"
+image_caption: "BMW E30: Dressed in a beautiful vintage DTM racing livery — perfect blend of retro style and raw mechanical energy"
 ---
 
 For a guy without a valid driving license, it might seem unfounded to be a motorsport enthusiast — traveling to circuits in remote areas just to quench my thirst for speed. This past weekend, I found myself at the DTM race at the Motorsport Arena Oschersleben, the northernmost permanent track in Germany. Spectators here sit high up on embankments about six to eight meters above the asphalt, giving you a perfect bird's-eye view of the race action. From this elevated vantage point, nothing hits you harder than the monstrous roar of the engines. They roar more intensely than a thunderstorm cracking directly overhead — especially on the first lap when the cars run bumper-to-bumper, weaving through the corners like a giant, mechanical snake. The sound of the roar is not just something you hear; it is something you feel as pressure waves vibrate your chest cavity.
