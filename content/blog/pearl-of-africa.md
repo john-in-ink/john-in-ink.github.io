@@ -6,7 +6,7 @@ type: "post"
 draft: false
 toc: false
 image: "images/jackfruit.JPG"
-caption: "Gravity-defying abundance: A cluster of jackfruits growing on a branch of a Ugandan homestead tree—jackfruit is the largest tree-borne fruit on Earth."
+description: "Gravity-defying abundance: A cluster of jackfruits growing on a branch of a Ugandan homestead tree—jackfruit is the largest tree-borne fruit on Earth."
 ---
 
 In 1908, Sir Winston Churchill famously popularized the term "The Pearl of Africa" to describe Uganda, which remains one of the continent's most visually arresting destinations. Beneath its raw natural beauty, however, lies a complex and scarred history. Once on a flight from Windhoek, Namibia, a fellow passenger remarked that her only association with Uganda was "Idi Amin, the butcher of Uganda"—a stark reminder of how deeply the shadows of past regimes and the memory of the decades-long war in the north still cloud the country's global image. Politically, the nation has never experienced a peaceful electoral transition of power since independence, continuing under one of Africa's longest-serving presidents. Compounding the drama is a bizarre, chaotic land system left behind as a relic of colonization, alongside a hefty international tab: war reparations owed to the DR Congo, [which Uganda is currently shelling out in massive $65 million annual installments](https://www.cambridge.org/core/journals/international-legal-materials/article/armed-activities-on-the-territory-of-the-congo-dem-rep-congo-v-uganda-reparations-judgment-icj/5E57660CF3ECC94FEF41A881BBA174E0). Nevertheless, rather than letting yesterday’s trauma define it, the country is looking toward a promising new horizon—standing poised on the absolute cusp of its historic first oil exports.
