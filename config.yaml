@@ -34,6 +34,13 @@ ignoreFiles:
   - "markdown-syntax.md"
   - "rich-content.md"
 
+#-------------------------------------------------------------------------
+[security]
+  [security.exec]
+    allow = ['^dart-sass$', '^go$', '^npx$', '^postcss$', '^tailwindcss$']
+#-------------------------------------------------------------------------
+
+
 # NAVBAR LINK DEFINITIONS: Positions Home, Blog, Gallery, and Contact across the top
 menu:
   main:
