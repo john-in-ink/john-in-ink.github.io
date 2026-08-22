@@ -25,22 +25,10 @@ params:
     - item: publications
     - item: hobbies
 
-#security:
-#  node:
-#    permissions:
-#      disable: true
-
 security:
   node:
     permissions:
       disable: true
-  exec:
-    allow:
-      - '^dart-sass$'
-      - '^go$'
-      - '^npx$'
-      - '^postcss$'
-      - '^tailwindcss$'
 
       
 
