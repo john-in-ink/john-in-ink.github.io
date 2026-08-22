@@ -36,11 +36,12 @@ security:
       disable: true
   exec:
     allow:
-      - ^dart-sass$
-      - ^go$
-      - ^npx$
-      - ^postcss$
-      - ^tailwindcss$
+      - '^dart-sass$'
+      - '^go$'
+      - '^npx$'
+      - '^postcss$'
+      - '^tailwindcss$'
+
       
 
 ignoreFiles:
