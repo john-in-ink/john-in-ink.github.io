@@ -25,21 +25,27 @@ params:
     - item: publications
     - item: hobbies
 
+#security:
+#  node:
+#    permissions:
+#      disable: true
+
 security:
   node:
     permissions:
       disable: true
+  exec:
+    allow:
+      - ^dart-sass$
+      - ^go$
+      - ^npx$
+      - ^postcss$
+      - ^tailwindcss$
+      
 
 ignoreFiles:
   - "markdown-syntax.md"
   - "rich-content.md"
-
-#-------------------------------------------------------------------------
-[security]
-  [security.exec]
-    allow = ['^dart-sass$', '^go$', '^npx$', '^postcss$', '^tailwindcss$']
-#-------------------------------------------------------------------------
-
 
 # NAVBAR LINK DEFINITIONS: Positions Home, Blog, Gallery, and Contact across the top
 menu:
