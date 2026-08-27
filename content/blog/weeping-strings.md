@@ -5,7 +5,7 @@ layout: "post"
 type: "post"
 draft: false
 toc: false
-image: "images/violin.jpg"
+thumbnail: "images/violin.jpg"
 ---
 
 ![Melancholic Crescendo Stream Animation](/images/blog_sadness_edge_to_edge.gif)
