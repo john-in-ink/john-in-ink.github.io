@@ -8,6 +8,8 @@ toc: false
 image: "images/violin.jpg"
 ---
 
+![Melancholic Crescendo Stream Animation](images/blog_sadness_edge_to_edge.gif)
+
 Choosing a title that captures the raw melancholy of classical music can be daunting—should it be Chords of Sorrow, Notes of Grief, or Weeping Strings? Yet none of these titles reflects the paradox of this music genre—that this profound grief is wrapped inside absolute grandeur, high society, and spectacular, world-class architecture like the golden Musikverein in Vienna or the Elbphilharmonie in Hamburg. It is the clash between the dark emotion of the music and the bright elegance of the venue. 
 
 Are these sad emotions triggered throughout the entire event? Not really. Walk into the Musikverein on a bustling evening, and you are welcomed by jubilant chatter, the glimmer of gold, and the sharp clinking of champagne glasses. It feels entirely triumphant. But the moment the conductor raises the baton and the first chord echoes through the hall, that bright armor vanishes. Suddenly, hundreds of strangers in formal attire are forced to sit together in absolute silence—a silence that encourages an inner dialogue, one that typically triggers sadness and forced introspection. Ultimately, this raw melancholy is sandwiched between the initial appreciation of the symphony's monumental skill and the thunderous, recurring applause at the end. 
