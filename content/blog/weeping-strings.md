@@ -13,13 +13,13 @@ image: "images/violin.jpg"
   img[src*="violin.jpg"] {
     display: none !important;
   }
-  /* If your single post layout uses a specific header class wrapper, we target it too */
   .post-header img, .featured-image, .hero-image {
     display: none !important;
   }
 </style>
 
-
+<!-- Negative margin slider instantly removes the ghost line above the canvas animation -->
+<div style="margin-top: -3.5rem;"></div>
 
 ![Melancholic Crescendo Stream Animation](/images/blog_sadness_edge_to_edge.gif)
 
