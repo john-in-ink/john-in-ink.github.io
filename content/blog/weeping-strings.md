@@ -5,12 +5,12 @@ layout: "post"
 type: "post"
 draft: false
 toc: false
-image: "images/violin.jpg"  
+image: "images/violin2.jpg"  
 ---
 
 <!-- This clean CSS block forces the theme's default top hero banner to disappear on this page -->
 <style>
-  img[src*="violin.jpg"] {
+  img[src*="violin2.jpg"] {
     display: none !important;
   }
   .post-header img, .featured-image, .hero-image {
