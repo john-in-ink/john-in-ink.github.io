@@ -8,7 +8,7 @@ toc: false
 image: "images/violin.jpg"
 ---
 
-![Melancholic Crescendo Stream Animation](images/blog_sadness_edge_to_edge.gif)
+![Melancholic Crescendo Stream Animation](/images/blog_sadness_edge_to_edge.gif)
 
 Choosing a title that captures the raw melancholy of classical music can be daunting—should it be Chords of Sorrow, Notes of Grief, or Weeping Strings? Yet none of these titles reflects the paradox of this music genre—that this profound grief is wrapped inside absolute grandeur, high society, and spectacular, world-class architecture like the golden Musikverein in Vienna or the Elbphilharmonie in Hamburg. It is the clash between the dark emotion of the music and the bright elegance of the venue. 
 
