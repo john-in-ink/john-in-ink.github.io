@@ -5,7 +5,9 @@ layout: "post"
 type: "post"
 draft: false
 toc: false
-thumbnail: "images/violin.jpg"
+image: "images/violin.jpg"  # Keep this named 'image' so all listing feeds can see it
+hide_feature_image: true     # Add this custom flag to hide it inside the post
+#thumbnail: "images/violin.jpg"
 ---
 
 ![Melancholic Crescendo Stream Animation](/images/blog_sadness_edge_to_edge.gif)
