@@ -6,10 +6,10 @@ type: "post"
 draft: false
 toc: false
 image: "images/galileo.png"
-image_caption: "Flipping off dogma since 1737: The middle finger of Galileo's right hand, preserved at the Museo Galileo in Florence"
+image_caption: "The middle finger of Galileo's right hand, preserved at the Museo Galileo in Florence"
 ---
 
-Look what I found in Florence: Galileo’s middle finger. It points skyward toward the vast cosmos he was prosecuted for defending, forever flipping the middle finger at the dogma that tried to silence him. It’s one of the more unusual ways we try to preserve memory, capturing history in the most unexpected objects—much like the test tube reputed to hold [Thomas Edison’s last breath](https://www.thehenryford.org/collections/explore/artifact/225212?AssetId=THF129663) and jawbones of Baganda kings.
+Look what I found in Florence: Galileo’s middle finger. It points skyward toward the vast cosmos he was prosecuted for defending, forever flipping the middle finger at the dogma that tried to silence him. It’s one of the more unusual ways we try to preserve memory, capturing history in the most unexpected objects—much like the [test tube reputed to hold Thomas Edison’s last breath](https://www.thehenryford.org/collections/explore/artifact/225212?AssetId=THF129663) and jawbones of Baganda kings.
 
 Yet these human relics force an uncomfortable ethical question: who gets to decide what happens to our remains—the person who claims the relic, or the person whose body it once belonged to? Harvey’s unauthorized removal of Einstein’s brain lays this bare. Unlike organ donation—where a body part is given to continue a life—a relic is taken to freeze a legacy.
 
