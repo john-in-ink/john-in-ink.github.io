@@ -24,3 +24,4 @@ Do we actually manage to preserve a memory by preserving a relic? [Lenin’s emb
 
 So if you still want to acquire a souvenir or relic, what factors actually matter—scale and price? Grandeur certainly anchors collective memory; Mount Rushmore compels a nation to remember a version of its history, while a faded handwritten letter whispers a far more intimate secret. But what about monetary value? The Catholic Church once drippingly adorned catacomb skeletons with gold and jewels, but did that make their memories any richer than those held by Galileo’s dry finger bone? Answers on a postcard.
 
+
