@@ -15,7 +15,7 @@ Yet these human relics force an uncomfortable ethical question: who gets to deci
 
 Must a relic be bodily? For decades, my grandma kept my father’s brittle, yellowing campaign poster pinned to her wall, proving that a simple scrap of aging paper can serve as a powerful anchor to the past. While touching that paper, I often wondered: must an anchor be part of the history itself to unlock the memory, or can a travel magnet from Florence hold the power to resurrect a specific chapter of a journey in Hamburg? The power of a relic lies not in its physical origin, but in the personal narrative we project onto it—a truth that perhaps explains why bodily relics hold an even deeper, more sobering sway. Galileo Galilei's preserved finger not only evokes his scientific legacy but also forces us to confront our own mortality, reminding us that even the brightest sparks are eventually extinguished.
 
-> The dead carry it with them, whatever 'it' is — Joan Didion
+> Memory fades, memory adjusts, memory conforms to what we think we remember — Joan Didion
 
 Technology, and the advent of AI, is reshaping the concept of the relic and giving us new ways to make memory endure. [The Pacific island nation of Tuvalu, threatened by rising sea levels, is creating a digital twin of itself—attempting to preserve its land, culture, and identity in the virtual world](https://www.bbc.com/future/article/20241121-tuvalu-the-pacific-islands-creating-a-digital-nation-in-the-metaverse-due-to-climate-change). On a smaller scale, we turn ashes into lab-grown diamonds or vinyl records, or build AI avatars that let us talk to a digital echo of someone who has died. We’ve moved from severing physical parts of ourselves to taking selfies.
 
