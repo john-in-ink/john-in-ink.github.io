@@ -217,21 +217,22 @@
           }
         }
 
-        // 2. Horizontal Gallery Grid Fix: Uses a relaxed partial match to bypass the fraction character hurdle
-        const elements = document.querySelectorAll("div, h3, h4");
-        elements.forEach(el => {
-          // Look for any element that explicitly contains your title text
-          if (el.textContent.includes("Love Letter to 33")) {
-            // Target the specific horizontal gallery loop card container elements
-            const isGalleryCardText = el.classList.contains("text-lg") || el.tagName === "H3" || el.tagName === "H4";
-            
-            // Safety checks: Skip the home teaser box component to prevent duplicate text errors entirely
-            if (isGalleryCardText && !el.closest(".flex-1.min-w-0")) {
-              if (!el.querySelector(".gallery-injected-subtitle") && !el.nextElementSibling?.classList.contains("gallery-injected-subtitle")) {
+        // 2. Horizontal Gallery Grid Fix: Targets the specific record player thumbnail image safely
+        const images = document.querySelectorAll("img");
+        images.forEach(img => {
+          const imgSrc = img.getAttribute("src") || "";
+          // Detects the card by matching its unique image asset source path properties
+          if (imgSrc.includes("vinyl") || imgSrc.includes("record") || img.getAttribute("alt")?.includes("Love Letter to 33")) {
+            // Traverse up to find the main gallery card container box element block wrapper
+            const cardContainer = img.closest("div, a, li");
+            if (cardContainer) {
+              // Find the orange text heading block nested inside this specific card element wrapper box
+              const cardHeading = cardContainer.querySelector("h3, h4, .text-lg, div");
+              if (cardHeading && !cardContainer.querySelector(".gallery-injected-subtitle")) {
                 const subtitleEl = document.createElement("p");
                 subtitleEl.className = "gallery-injected-subtitle text-xs font-medium tracking-wide text-zinc-400 italic mt-1 mb-1";
                 subtitleEl.textContent = targetText;
-                el.insertAdjacentElement("afterend", subtitleEl);
+                cardHeading.insertAdjacentElement("afterend", subtitleEl);
               }
             }
           }
@@ -250,4 +251,3 @@
     })();
   </script>
 </head>
-
