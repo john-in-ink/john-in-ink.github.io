@@ -205,7 +205,7 @@
       const targetText = "Confessions of a hopeless vinyl romantic [18+]";
 
       const runSyncInjection = () => {
-        // 1. Fixes the Full Blog Article View Header (image_JzSow0.png)
+        // 1. Article Page Fix: Adds subtitle under the main H1 heading on full post views
         const postHeading = document.querySelector("main h1, article h1");
         if (postHeading && postHeading.textContent.includes("Love Letter to 33")) {
           if (!document.getElementById("native-article-subtitle")) {
@@ -217,12 +217,13 @@
           }
         }
 
-        // 2. Fixes the Accordion Horizontal Loop Gallery Grid Cards (image_UUFl80.png)
-        const galleryCardHeadings = document.querySelectorAll("div, h3, h4");
-        galleryCardHeadings.forEach(heading => {
-          if (heading.textContent.trim() === "Love Letter to 33 ⅓ RPM") {
-            // Checks if it's the specific header line inside the horizontal gallery card container
-            if (!heading.querySelector(".gallery-injected-subtitle") && !heading.nextElementSibling?.classList.contains("gallery-injected-subtitle")) {
+        // 2. Horizontal Gallery Grid Fix: Explicitly targets the yellow heading under card thumbnails
+        const gridHeadings = document.querySelectorAll("div, h3, h4");
+        gridHeadings.forEach(heading => {
+          // Targets the specific container that contains ONLY the link title string text exactly
+          if (heading.textContent.trim() === "Love Letter to 33 ⅓ RPM" || heading.textContent.trim() === "Love Letter to 33 \u2153 RPM") {
+            // Skips the home teaser box component to prevent duplicate text errors entirely
+            if (!heading.closest(".flex-1.min-w-0") && !heading.querySelector(".gallery-injected-subtitle") && !heading.nextElementSibling?.classList.contains("gallery-injected-subtitle")) {
               const subtitleEl = document.createElement("p");
               subtitleEl.className = "gallery-injected-subtitle text-xs font-medium tracking-wide text-zinc-400 italic mt-1 mb-1";
               subtitleEl.textContent = targetText;
@@ -232,11 +233,11 @@
         });
       };
 
-      // Execute instantly across standard DOM state transitions
+      // Run code immediately across DOM state loads
       document.addEventListener("DOMContentLoaded", runSyncInjection);
       window.addEventListener("load", runSyncInjection);
 
-      // Watches dynamic theme state shifts to catch menu tab switches seamlessly
+      // Listens for menu accordion component switches cleanly without causing refreshing delays
       const dynamicObserver = new MutationObserver(runSyncInjection);
       document.addEventListener("DOMContentLoaded", () => {
         dynamicObserver.observe(document.body, { childList: true, subtree: true });
