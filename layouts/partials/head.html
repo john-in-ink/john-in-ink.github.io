@@ -9,6 +9,7 @@
   gtag('config', 'G-84CW3WZNWP');
 </script>
 
+  
   {{ if .IsHome }}
   <title>{{ .Site.Title }}</title>
   {{ else }}
@@ -36,7 +37,8 @@
     href="//fonts.googleapis.com/css?family=Didact+Gothic%7CRoboto:400%7CRoboto+Mono"
   />
 
-  {{ \(css := resources.Get "main.css" \vert{} css.TailwindCSS }} {{ if hugo.IsProduction }} {{ with \)css | minify | fingerprint }}
+  {{ $css := resources.Get "main.css" | css.TailwindCSS }} {{ if
+  hugo.IsProduction }} {{ with $css | minify | fingerprint }}
   <link
     rel="stylesheet"
     href="{{ .RelPermalink }}"
@@ -44,7 +46,7 @@
     crossorigin="anonymous"
   />
   {{ end }} {{ else}}
-  <link href="{{ \$css.RelPermalink }}" rel="stylesheet" />
+  <link href="{{ $css.RelPermalink }}" rel="stylesheet" />
   {{ end }}
 
   <script>
@@ -138,17 +140,21 @@
           defaultActivePanel.nextElementSibling.scrollHeight + "px";
       }
 
-      // INTEGRATED NAV PATCH: Dynamically appends the missing tabs to the menu layout natively
+      // INTEGRATED NAV PATCH: Dynamically appends the missing Gallery tab to the menu layout natively
+            // INTEGRATED NAV PATCH: Dynamically appends the missing tabs to the menu layout natively
       try {
         const navContainers = document.querySelectorAll('div.flex.flex-row.items-center.gap-4.font-bold, div');
         navContainers.forEach(container => {
+          // Identify the exact container box holding the text links "Home" and "Blog"
           if (container.textContent.trim().startsWith("Home") && container.textContent.includes("Blog") && !container.innerHTML.includes('gallery/')) {
+            // Append Gallery Link
             const galleryLink = document.createElement('a');
             galleryLink.href = '{{ "gallery/" | relURL }}';
             galleryLink.className = 'hover:text-amber-500 transition-colors ml-4';
             galleryLink.textContent = 'Gallery';
             container.appendChild(galleryLink);
 
+            // Append Contact Link
             const contactLink = document.createElement('a');
             contactLink.href = '{{ "contact/" | relURL }}';
             contactLink.className = 'hover:text-amber-500 transition-colors ml-4';
@@ -166,58 +172,6 @@
           defaultActivePanel.nextElementSibling.scrollHeight + "px";
       }
     };
-  </script>
-
-  <!-- AUTOMATED DYNAMIC SUBTITLE INJECTION LAYER -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      // Define the target subtitle content map fetched from Front Matter
-      const targetSubtitle = "Confessions of a hopeless vinyl romantic [18+]";
-      
-      const injectSubtitles = () => {
-        // 1. Target the individual full post view main header (image_eRvVSy.png)
-        const mainTitle = document.querySelector("main h1, article h1");
-        if (mainTitle && mainTitle.textContent.includes("Love Letter to 33")) {
-          if (!document.getElementById("post-page-subtitle")) {
-            const sub = document.createElement("p");
-            sub.id = "post-page-subtitle";
-            sub.className = "text-base md:text-lg font-medium tracking-wide text-zinc-400 italic mt-2 mb-4";
-            sub.textContent = targetSubtitle;
-            mainTitle.insertAdjacentElement("afterend", sub);
-          }
-        }
-
-        // 2. Target the main accordion vertical lists grid items (image_YPfvSj.png)
-        const links = document.querySelectorAll("a, h3 a, h4 a");
-        links.forEach(link => {
-          if (link.textContent.includes("Love Letter to 33")) {
-            // Locate parent block structure container holding the link
-            const parentElement = link.closest('div, li, h3, h4');
-            if (parentElement && !parentElement.querySelector(".grid-injected-subtitle")) {
-              const sub = document.createElement("p");
-              sub.className = "grid-injected-subtitle text-sm font-medium tracking-wide text-zinc-400 italic mt-0.5 mb-1";
-              sub.textContent = targetSubtitle;
-              
-              // Appends elegantly right underneath the title line block element link wrapper
-              if (parentElement.tagName === 'H3' || parentElement.tagName === 'H4') {
-                parentElement.insertAdjacentElement("afterend", sub);
-              } else {
-                link.insertAdjacentElement("afterend", sub);
-              }
-            }
-          }
-        });
-      };
-
-      // Run immediately on page transition initialization
-      injectSubtitles();
-
-      // Listen for dynamic accordion open animations shifting DOM container visibility states
-      const observer = new MutationObserver(() => {
-        injectSubtitles();
-      });
-      observer.observe(document.body, { childList: true, subtree: true });
-    });
   </script>
 </head>
 
