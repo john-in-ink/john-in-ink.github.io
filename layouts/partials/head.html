@@ -199,3 +199,49 @@
   }
 </style>
 
+  <!-- SECURE TARGETED SUBTITLE RECONCILIATION LAYER -->
+  <script>
+    (function() {
+      const targetText = "Confessions of a hopeless vinyl romantic [18+]";
+
+      const runSyncInjection = () => {
+        // 1. Fixes the Full Blog Article View Header (image_JzSow0.png)
+        const postHeading = document.querySelector("main h1, article h1");
+        if (postHeading && postHeading.textContent.includes("Love Letter to 33")) {
+          if (!document.getElementById("native-article-subtitle")) {
+            const subtitleEl = document.createElement("p");
+            subtitleEl.id = "native-article-subtitle";
+            subtitleEl.className = "text-base md:text-lg font-medium tracking-wide text-zinc-400 italic mt-1.5 mb-2";
+            subtitleEl.textContent = targetText;
+            postHeading.insertAdjacentElement("afterend", subtitleEl);
+          }
+        }
+
+        // 2. Fixes the Accordion Horizontal Loop Gallery Grid Cards (image_UUFl80.png)
+        const galleryCardHeadings = document.querySelectorAll("div, h3, h4");
+        galleryCardHeadings.forEach(heading => {
+          if (heading.textContent.trim() === "Love Letter to 33 ⅓ RPM") {
+            // Checks if it's the specific header line inside the horizontal gallery card container
+            if (!heading.querySelector(".gallery-injected-subtitle") && !heading.nextElementSibling?.classList.contains("gallery-injected-subtitle")) {
+              const subtitleEl = document.createElement("p");
+              subtitleEl.className = "gallery-injected-subtitle text-xs font-medium tracking-wide text-zinc-400 italic mt-1 mb-1";
+              subtitleEl.textContent = targetText;
+              heading.insertAdjacentElement("afterend", subtitleEl);
+            }
+          }
+        });
+      };
+
+      // Execute instantly across standard DOM state transitions
+      document.addEventListener("DOMContentLoaded", runSyncInjection);
+      window.addEventListener("load", runSyncInjection);
+
+      // Watches dynamic theme state shifts to catch menu tab switches seamlessly
+      const dynamicObserver = new MutationObserver(runSyncInjection);
+      document.addEventListener("DOMContentLoaded", () => {
+        dynamicObserver.observe(document.body, { childList: true, subtree: true });
+      });
+    })();
+  </script>
+</head>
+
