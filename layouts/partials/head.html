@@ -217,22 +217,26 @@
           }
         }
 
-        // 2. Horizontal Gallery Grid Fix: Targets the specific record player thumbnail image safely
-        const images = document.querySelectorAll("img");
-        images.forEach(img => {
-          const imgSrc = img.getAttribute("src") || "";
-          // Detects the card by matching its unique image asset source path properties
-          if (imgSrc.includes("vinyl") || imgSrc.includes("record") || img.getAttribute("alt")?.includes("Love Letter to 33")) {
-            // Traverse up to find the main gallery card container box element block wrapper
-            const cardContainer = img.closest("div, a, li");
-            if (cardContainer) {
-              // Find the orange text heading block nested inside this specific card element wrapper box
-              const cardHeading = cardContainer.querySelector("h3, h4, .text-lg, div");
-              if (cardHeading && !cardContainer.querySelector(".gallery-injected-subtitle")) {
-                const subtitleEl = document.createElement("p");
-                subtitleEl.className = "gallery-injected-subtitle text-xs font-medium tracking-wide text-zinc-400 italic mt-1 mb-1";
-                subtitleEl.textContent = targetText;
-                cardHeading.insertAdjacentElement("afterend", subtitleEl);
+        // 2. Horizontal Gallery Grid Fix: Targets the structural heading directly above the post date line element
+        const allElements = document.querySelectorAll("div, span, p");
+        allElements.forEach(el => {
+          // Find the exact text date stamp element container
+          if (el.textContent.trim() === "October 21, 2026") {
+            // Safety Check: Avoid touching the home teaser preview box container
+            if (!el.closest(".flex-1.min-w-0")) {
+              // Locate the text element standing right above the date line block element container
+              const titleHeading = el.previousElementSibling;
+              
+              if (titleHeading && titleHeading.textContent.includes("Love Letter to 33") && !titleHeading.querySelector(".gallery-injected-subtitle")) {
+                // Ensure a duplicate block element container is not already injected directly above the element
+                if (!el.parentElement.querySelector(".gallery-injected-subtitle")) {
+                  const subtitleEl = document.createElement("p");
+                  subtitleEl.className = "gallery-injected-subtitle text-xs font-medium tracking-wide text-zinc-400 italic mt-1 mb-1";
+                  subtitleEl.textContent = targetText;
+                  
+                  // Injects cleanly right below the orange title link block element wrapper box
+                  titleHeading.insertAdjacentElement("afterend", subtitleEl);
+                }
               }
             }
           }
@@ -251,3 +255,4 @@
     })();
   </script>
 </head>
+
