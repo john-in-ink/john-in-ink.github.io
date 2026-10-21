@@ -18,7 +18,7 @@
 
 <!-- MAIN APP ENTRY CONTEXT SWITCH -->
 {{ if .IsPage }}
-  <!-- 1. FULL BLOG POST ARTICLE VIEW (image_eRvVSy.png) -->
+  <!-- 1. FULL STANDALONE BLOG POST ARTICLE VIEW (image_eRvVSy.png) -->
   <div class="max-w-3xl mx-auto px-4 py-8 antialiased">
     <header class="mb-8 border-b border-zinc-800/80 pb-6">
       <span class="text-xs font-mono text-zinc-500 uppercase block mb-2">
@@ -28,7 +28,7 @@
         {{ .Title }}
       </h1>
       
-      <!-- Distinct Subtitle styling: Muted gray, italic, medium weight -->
+      <!-- Distinct Subtitle styling: Distinct medium weight, muted gray, matching italic profile -->
       {{ if .Params.subtitle }}
       <p class="text-base md:text-lg font-medium tracking-wide text-zinc-400 italic mt-2">
         {{ .Params.subtitle }}
@@ -77,22 +77,26 @@
           </h2>
 
           <!-- 2. GRID / ACCORDION POST PREVIEW LAYER (image_YPfvSj.png) -->
-          <!-- Handles your custom section layouts where you want titles paired directly with subtitles -->
           <div class="panel overflow-hidden px-2 ml-2" {{ if .panel_id }} id="{{ .panel_id }}" {{ end }}>
             {{ if eq .item "blog" }}
-              <!-- Modified inner layout loop to print card lists complete with dynamic subtitles -->
-              <div class="space-y-6">
+              <!-- Intercepts the blog section to explicitly output regular pages with their custom subtitle metadata fields -->
+              <div class="space-y-4 py-1">
                 {{ range (where $.Site.RegularPages "Section" "blog") }}
-                  <div class="mb-4">
-                    <h3 class="text-lg font-bold text-zinc-100 hover:text-amber-500 transition-colors">
+                  <div class="group py-1">
+                    <h3 class="text-base font-bold text-zinc-200 group-hover:text-amber-500 transition-colors">
                       <a href="{{ .Permalink }}">{{ .Title }}</a>
                     </h3>
+                    
+                    <!-- Subtitle injected cleanly into your main layout grid view links list -->
                     {{ if .Params.subtitle }}
-                    <p class="text-sm font-medium tracking-wide text-zinc-400 italic mt-0.5 mb-1">
+                    <p class="text-xs font-medium tracking-wide text-zinc-400 italic mt-0.5 mb-1">
                       {{ .Params.subtitle }}
                     </p>
                     {{ end }}
-                    <span class="text-xs text-zinc-500 block">{{ .Date.Format "October 2, 2006" }}</span>
+                    
+                    <span class="text-[10px] font-mono text-zinc-500 block">
+                      {{ .Date.Format "October 2, 2006" }}
+                    </span>
                   </div>
                 {{ end }}
               </div>
@@ -137,7 +141,7 @@
                   {{ .Title }}
                 </h4>
                 
-                <!-- Subtitle rendered nicely inside your teaser view -->
+                <!-- Subtitle embedded inside your teaser card template block element links -->
                 {{ if .Params.subtitle }}
                 <p class="text-xs font-medium tracking-wide text-zinc-400 italic mb-1.5 truncate">
                   {{ .Params.subtitle }}
