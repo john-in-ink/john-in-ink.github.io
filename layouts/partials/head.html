@@ -199,36 +199,3 @@
   }
 </style>
 
-
-<!-- DYNAMIC SUBTITLE GRAPHIC DESIGN OVERRIDE LAYER -->
-<style>
-  /* 1. Targets the text across your layout elements (Teaser Cards & Accordion Grid Lists) */
-  a[href*="love-letter-to-33"]::after,
-  h3:has(a[href*="love-letter-to-33"])::after,
-  h4:has(a[href*="love-letter-to-33"])::after {
-    content: "Confessions of a hopeless vinyl romantic [18+]";
-    display: block !important;
-    font-size: 0.75rem !important; /* text-xs equivalent */
-    font-weight: 500 !important;   /* font-medium equivalent */
-    letter-spacing: 0.025em !important; /* tracking-wide */
-    color: #a1a1aa !important;     /* text-zinc-400 muted gray */
-    font-style: italic !important;
-    margin-top: 0.125rem !important;
-    margin-bottom: 0.375rem !important;
-    text-transform: none !important;
-  }
-
-  /* 2. Targets the text inside the standalone article page header block view */
-  main h1::after, 
-  article h1::after {
-    if-content-matches: "Love Letter to 33"; /* Fallback helper check hook */
-    content: "Confessions of a hopeless vinyl romantic [18+]";
-    display: block !important;
-    font-size: 1rem !important;     /* text-base equivalent */
-    font-weight: 500 !important;
-    color: #a1a1aa !important;
-    font-style: italic !important;
-    margin-top: 0.5rem !important;
-    letter-spacing: 0.025em !important;
-  }
-</style>
