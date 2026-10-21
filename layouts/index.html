@@ -18,22 +18,23 @@
 
 <!-- MAIN APP ENTRY CONTEXT SWITCH -->
 {{ if .IsPage }}
-  <!-- 1. FULL STANDALONE BLOG POST ARTICLE VIEW (image_eRvVSy.png) -->
+  <!-- 1. FULL BLOG POST ARTICLE VIEW (Fixes image_MnZewo.png natively without refreshing delays) -->
   <div class="max-w-3xl mx-auto px-4 py-8 antialiased">
     <header class="mb-8 border-b border-zinc-800/80 pb-6">
-      <span class="text-xs font-mono text-zinc-500 uppercase block mb-2">
-        {{ .Date.Format "January 2, 2006" }}
-      </span>
       <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-zinc-100 mb-2">
         {{ .Title }}
       </h1>
       
-      <!-- Distinct Subtitle styling: Distinct medium weight, muted gray, matching italic profile -->
+      <!-- Styled Subtitle: Muted gray, italic, medium weight, completely distinct from body text -->
       {{ if .Params.subtitle }}
-      <p class="text-base md:text-lg font-medium tracking-wide text-zinc-400 italic mt-2">
+      <p class="text-base md:text-lg font-medium tracking-wide text-zinc-400 italic mt-1.5 mb-2">
         {{ .Params.subtitle }}
       </p>
       {{ end }}
+
+      <span class="text-xs font-mono text-zinc-500 uppercase block">
+        {{ .Date.Format "January 2, 2006" }}
+      </span>
     </header>
 
     <article class="prose prose-invert max-w-none text-zinc-300 leading-relaxed space-y-6">
@@ -48,7 +49,7 @@
   </div>
 
 {{ else }}
-  <!-- HOMEPAGE ACCORDION & GRID VIEW CONTEXT -->
+  <!-- 2. HOMEPAGE PROFILE ACCORDION LAYOUT -->
   <div class="grid grid-cols-1 md:grid-cols-5 gap-4 py-2 antialiased">
     <!-- Left Side: Profile and Socials -->
     <div class="col-span-2">
@@ -61,7 +62,7 @@
       {{ partial "footer" . }}
     </div>
     
-    <!-- Right Side: Navigation & Blog Layouts -->
+    <!-- Right Side: Navigation & Blog Teaser Only -->
     <div class="col-span-3 relative flex flex-col justify-between" style="min-height: 100%;">
       <div>
         {{ $found_expanded := false }}
@@ -76,39 +77,15 @@
             </div>
           </h2>
 
-          <!-- 2. GRID / ACCORDION POST PREVIEW LAYER (image_YPfvSj.png) -->
+          <!-- Panel container setup using the CSS animation profiles defined above -->
           <div class="panel overflow-hidden px-2 ml-2" {{ if .panel_id }} id="{{ .panel_id }}" {{ end }}>
-            {{ if eq .item "blog" }}
-              <!-- Intercepts the blog section to explicitly output regular pages with their custom subtitle metadata fields -->
-              <div class="space-y-4 py-1">
-                {{ range (where $.Site.RegularPages "Section" "blog") }}
-                  <div class="group py-1">
-                    <h3 class="text-base font-bold text-zinc-200 group-hover:text-amber-500 transition-colors">
-                      <a href="{{ .Permalink }}">{{ .Title }}</a>
-                    </h3>
-                    
-                    <!-- Subtitle injected cleanly into your main layout grid view links list -->
-                    {{ if .Params.subtitle }}
-                    <p class="text-xs font-medium tracking-wide text-zinc-400 italic mt-0.5 mb-1">
-                      {{ .Params.subtitle }}
-                    </p>
-                    {{ end }}
-                    
-                    <span class="text-[10px] font-mono text-zinc-500 block">
-                      {{ .Date.Format "October 2, 2006" }}
-                    </span>
-                  </div>
-                {{ end }}
-              </div>
-            {{ else }}
-              {{ partial (print "accordion/" .item) $ }}
-            {{ end }}
+            {{ partial (print "accordion/" .item) $ }}
           </div>
         </div>
         {{ end }}
       </div>
 
-      <!-- 3. BOTTOM SECTION: HOMEPAGE SINGLE BLOG TEASER (image__aGxbQ.png) -->
+      <!-- 3. BOTTOM SECTION: LATEST FROM THE BLOG TEASER (Fixes image_-uqbTb.png double text) -->
       <div class="mt-4 px-2">
         {{ range first 1 (where .Site.RegularPages "Section" "blog") }}
         <div>
@@ -132,7 +109,7 @@
                 {{ end }}
               </div>
 
-              <!-- Blog Info Teaser Preview -->
+              <!-- Blog Info Teaser Preview Content Box -->
               <div class="flex-1 min-w-0">
                 <span class="text-[10px] font-mono text-zinc-500 uppercase block mb-0.5">
                   {{ .Date.Format "Jan 2, 2006" }}
@@ -141,7 +118,7 @@
                   {{ .Title }}
                 </h4>
                 
-                <!-- Subtitle embedded inside your teaser card template block element links -->
+                <!-- Subtitle: Styled identically to match post view typography guidelines perfectly -->
                 {{ if .Params.subtitle }}
                 <p class="text-xs font-medium tracking-wide text-zinc-400 italic mb-1.5 truncate">
                   {{ .Params.subtitle }}
