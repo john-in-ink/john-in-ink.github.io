@@ -217,17 +217,22 @@
           }
         }
 
-        // 2. Horizontal Gallery Grid Fix: Explicitly targets the yellow heading under card thumbnails
-        const gridHeadings = document.querySelectorAll("div, h3, h4");
-        gridHeadings.forEach(heading => {
-          // Targets the specific container that contains ONLY the link title string text exactly
-          if (heading.textContent.trim() === "Love Letter to 33 ⅓ RPM" || heading.textContent.trim() === "Love Letter to 33 \u2153 RPM") {
-            // Skips the home teaser box component to prevent duplicate text errors entirely
-            if (!heading.closest(".flex-1.min-w-0") && !heading.querySelector(".gallery-injected-subtitle") && !heading.nextElementSibling?.classList.contains("gallery-injected-subtitle")) {
-              const subtitleEl = document.createElement("p");
-              subtitleEl.className = "gallery-injected-subtitle text-xs font-medium tracking-wide text-zinc-400 italic mt-1 mb-1";
-              subtitleEl.textContent = targetText;
-              heading.insertAdjacentElement("afterend", subtitleEl);
+        // 2. Horizontal Gallery Grid Fix: Uses a relaxed partial match to bypass the fraction character hurdle
+        const elements = document.querySelectorAll("div, h3, h4");
+        elements.forEach(el => {
+          // Look for any element that explicitly contains your title text
+          if (el.textContent.includes("Love Letter to 33")) {
+            // Target the specific horizontal gallery loop card container elements
+            const isGalleryCardText = el.classList.contains("text-lg") || el.tagName === "H3" || el.tagName === "H4";
+            
+            // Safety checks: Skip the home teaser box component to prevent duplicate text errors entirely
+            if (isGalleryCardText && !el.closest(".flex-1.min-w-0")) {
+              if (!el.querySelector(".gallery-injected-subtitle") && !el.nextElementSibling?.classList.contains("gallery-injected-subtitle")) {
+                const subtitleEl = document.createElement("p");
+                subtitleEl.className = "gallery-injected-subtitle text-xs font-medium tracking-wide text-zinc-400 italic mt-1 mb-1";
+                subtitleEl.textContent = targetText;
+                el.insertAdjacentElement("afterend", subtitleEl);
+              }
             }
           }
         });
