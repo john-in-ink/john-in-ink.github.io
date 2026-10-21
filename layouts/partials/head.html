@@ -217,24 +217,17 @@
           }
         }
 
-        // 2. Horizontal Gallery Grid Fix: Targets the structural heading directly above the post date line element
+        // 2. Horizontal Gallery Grid Fix: Targets elements relative to the post date line element
         const allElements = document.querySelectorAll("div, span, p");
         allElements.forEach(el => {
-          // Find the exact text date stamp element container
           if (el.textContent.trim() === "October 21, 2026") {
-            // Safety Check: Avoid touching the home teaser preview box container
             if (!el.closest(".flex-1.min-w-0")) {
-              // Locate the text element standing right above the date line block element container
               const titleHeading = el.previousElementSibling;
-              
-              if (titleHeading && titleHeading.textContent.includes("Love Letter to 33") && !titleHeading.querySelector(".gallery-injected-subtitle")) {
-                // Ensure a duplicate block element container is not already injected directly above the element
+              if (titleHeading && titleHeading.textContent.includes("Love Letter to 33")) {
                 if (!el.parentElement.querySelector(".gallery-injected-subtitle")) {
                   const subtitleEl = document.createElement("p");
                   subtitleEl.className = "gallery-injected-subtitle text-xs font-medium tracking-wide text-zinc-400 italic mt-1 mb-1";
                   subtitleEl.textContent = targetText;
-                  
-                  // Injects cleanly right below the orange title link block element wrapper box
                   titleHeading.insertAdjacentElement("afterend", subtitleEl);
                 }
               }
@@ -243,16 +236,54 @@
         });
       };
 
-      // Run code immediately across DOM state loads
-      document.addEventListener("DOMContentLoaded", runSyncInjection);
-      window.addEventListener("load", runSyncInjection);
+      // Loop script continuously during initial page load to guarantee execution
+      let checkCount = 0;
+      const pollPageLayout = () => {
+        runSyncInjection();
+        if (checkCount < 30) { // Polls safely for 3 seconds after page loads
+          checkCount++;
+          window.requestAnimationFrame(pollPageLayout);
+        }
+      };
 
-      // Listens for menu accordion component switches cleanly without causing refreshing delays
-      const dynamicObserver = new MutationObserver(runSyncInjection);
+      // Intercept accordion clicks to execute the insertion instantly when opened
+      const bindAccordionHooks = () => {
+        const triggers = document.querySelectorAll(".accordion, [onclick*='expandAccordion']");
+        triggers.forEach(trigger => {
+          if (!trigger.dataset.subtitleHooked) {
+            trigger.addEventListener("click", () => {
+              // Polls during the sliding panel animation window
+              let loop = 0;
+              const animateCheck = () => {
+                runSyncInjection();
+                if (loop < 15) { loop++; window.requestAnimationFrame(animateCheck); }
+              };
+              window.requestAnimationFrame(animateCheck);
+            });
+            trigger.dataset.subtitleHooked = "true";
+          }
+        });
+      };
+
+      // Set up triggers across standard page states
+      document.addEventListener("DOMContentLoaded", () => {
+        window.requestAnimationFrame(pollPageLayout);
+        bindAccordionHooks();
+      });
+      window.addEventListener("load", () => {
+        runSyncInjection();
+        bindAccordionHooks();
+      });
+
+      // Keep MutationObserver as a fallback safety layer
+      const dynamicObserver = new MutationObserver(() => {
+        runSyncInjection();
+        bindAccordionHooks();
+      });
       document.addEventListener("DOMContentLoaded", () => {
         dynamicObserver.observe(document.body, { childList: true, subtree: true });
       });
     })();
   </script>
 </head>
-
+ 
