@@ -9,12 +9,12 @@
   gtag('config', 'G-84CW3WZNWP');
 </script>
 
-  
-  {{ if .IsHome }}
+ 
+{{ if .IsHome }}
   <title>{{ .Site.Title }}</title>
-  {{ else }}
+{{ else }}
   <title>{{ .Title }} - {{ .Site.Title }}</title>
-  {{ end }}
+{{ end }}
   <meta charset="UTF-8" />
   <meta
     name="viewport"
@@ -37,15 +37,18 @@
     href="//fonts.googleapis.com/css?family=Didact+Gothic%7CRoboto:400%7CRoboto+Mono"
   />
 
-  {{ \(css := resources.Get "main.css" \vert{} css.TailwindCSS }} {{ if hugo.IsProduction }} {{ with \)css | minify | fingerprint }}
-  <link
-    rel="stylesheet"
-    href="{{ .RelPermalink }}"
-    integrity="{{ .Data.Integrity | safeHTMLAttr }}"
-    crossorigin="anonymous"
-  />
-  {{ end }} {{ else}}
-  <link href="{{ \$css.RelPermalink }}" rel="stylesheet" />
+  {{ \$css := resources.Get "main.css" | css.TailwindCSS }} 
+  {{ if hugo.IsProduction }} 
+    {{ with \$css | minify | fingerprint }}
+    <link
+      rel="stylesheet"
+      href="{{ .RelPermalink }}"
+      integrity="{{ .Data.Integrity | safeHTMLAttr }}"
+      crossorigin="anonymous"
+    />
+    {{ end }} 
+  {{ else }}
+    <link href="{{ \$css.RelPermalink }}" rel="stylesheet" />
   {{ end }}
 
   <script>
@@ -172,11 +175,10 @@
   <!-- AUTOMATED DYNAMIC SUBTITLE INJECTION LAYER -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // Define the target subtitle content map fetched from Front Matter
       const targetSubtitle = "Confessions of a hopeless vinyl romantic [18+]";
       
       const injectSubtitles = () => {
-        // 1. Target the individual full post view main header (image_eRvVSy.png)
+        // 1. Full standalone blog post header subtitle setup
         const mainTitle = document.querySelector("main h1, article h1");
         if (mainTitle && mainTitle.textContent.includes("Love Letter to 33")) {
           if (!document.getElementById("post-page-subtitle")) {
@@ -188,18 +190,16 @@
           }
         }
 
-        // 2. Target the main accordion vertical lists grid items (image_YPfvSj.png)
+        // 2. Accordion inner grid links list subtitle setup
         const links = document.querySelectorAll("a, h3 a, h4 a");
         links.forEach(link => {
           if (link.textContent.includes("Love Letter to 33")) {
-            // Locate parent block structure container holding the link
             const parentElement = link.closest('div, li, h3, h4');
             if (parentElement && !parentElement.querySelector(".grid-injected-subtitle")) {
               const sub = document.createElement("p");
               sub.className = "grid-injected-subtitle text-sm font-medium tracking-wide text-zinc-400 italic mt-0.5 mb-1";
               sub.textContent = targetSubtitle;
               
-              // Appends elegantly right underneath the title line block element link wrapper
               if (parentElement.tagName === 'H3' || parentElement.tagName === 'H4') {
                 parentElement.insertAdjacentElement("afterend", sub);
               } else {
@@ -210,10 +210,8 @@
         });
       };
 
-      // Run immediately on page transition initialization
       injectSubtitles();
 
-      // Listen for dynamic accordion open animations shifting DOM container visibility states
       const observer = new MutationObserver(() => {
         injectSubtitles();
       });
@@ -245,4 +243,3 @@
     color: #f5f5f5 !important;
   }
 </style>
-
