@@ -9,9 +9,14 @@ toc: false
 image: "images/vinyl.png"
 image_caption: ""
 ---
-<div align="center">
-  <img src="{{ site.baseurl }}/images/hearts-bg.svg" width="100%" style="max-height: 350px; object-fit: cover; border-radius: 8px;" alt="Hearts Background">
-</div>
+<!-- 1. FULL CONTAINER WRAPPER -->
+<div style="position: relative; width: 100%;">
+
+  <!-- 2. THE VISUAL LAYOUT (Pushed entirely to the back layer) -->
+  <img src="/images/hearts-bg.svg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; opacity: 0.8; z-index: 0;" alt="">
+
+  <!-- 3. YOUR TEXT WRAPPER COLUMN (Elevated to the top layer) -->
+  <div style="position: relative; z-index: 1; max-width: 750px; margin: 0 auto; padding: 20px 15px; color: #f4f1de;">
 
 **Dear 33⅓ RPM,**
 
