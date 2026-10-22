@@ -3,8 +3,8 @@
     /* FOUNTAIN EFFECT: Hearts floating from bottom to top */
     @keyframes floatUp {
       0% { transform: translateY(650px) scale(0.5); opacity: 0; }
-      15% { opacity: 0.12; }
-      85% { opacity: 0.12; }
+      80% { opacity: 0.12; }
+      200% { opacity: 0.12; }
       900% { transform: translateY(-50px) scale(1.1); opacity: 0; }
     }
     
