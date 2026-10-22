@@ -12,11 +12,12 @@ image_caption: ""
 <!-- 1. FULL CONTAINER WRAPPER -->
 <div style="position: relative; width: 100%;">
 
-  <!-- 2. THE VISUAL LAYOUT (Tiled, crisp background pattern) -->
-  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('/images/hearts-bg.svg'); background-repeat: repeat; background-size: 400px 300px; pointer-events: none; opacity: 0.8; z-index: 0;"></div>
+  <!-- 2. THE VISUAL LAYOUT (Upscaled, perfectly proportioned pattern) -->
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('/images/hearts-bg.svg'); background-repeat: repeat; background-size: 800px 600px; pointer-events: none; opacity: 0.8; z-index: 0;"></div>
 
-  <!-- 3. YOUR TEXT WRAPPER COLUMN (Elevated to the top layer) -->
+  <!-- 3. YOUR TEXT WRAPPER COLUMN -->
   <div style="position: relative; z-index: 1; max-width: 750px; margin: 0 auto; padding: 20px 15px; color: #f4f1de;">
+
 
 **Dear 33⅓ RPM,**
 
