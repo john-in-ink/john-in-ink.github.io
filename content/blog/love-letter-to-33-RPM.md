@@ -12,6 +12,7 @@ image_caption: ""
 <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('/images/hearts-bg.svg'); background-repeat: repeat; background-size: 2400px 1800px; pointer-events: none; opacity: 0.8; z-index: 0;"></div>
 
 
+
 **Dear 33⅓ RPM,**
 
 I have been unfaithful. I flirted with, and repeatedly succumbed to, the seductive ease of your younger, cloud-bound siblings. They stream in an instant and never hold a grudge when I change positions mid-song. Yet, they are plagued by intrusive ads—most egregiously, that youngest sibling of yours, Spotify. To hell with those hollow, open relationships. I am ready to settle down and commit to you.
