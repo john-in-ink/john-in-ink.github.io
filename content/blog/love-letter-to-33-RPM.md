@@ -10,62 +10,6 @@ image: "images/vinyl.png"
 image_caption: ""
 ---
 
-<!-- 1. START THE TWO-COLUMN LAYOUT -->
-<div style="display: flex; gap: 40px; align-items: flex-start; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">
-  <!-- 2. LEFT SIDE: FIXED SVG ROADMAP -->
-  <div style="flex: 1; max-width: 180px; min-width: 140px; position: sticky; top: 20px;">
-    <svg xmlns="http://w3.org" viewBox="0 0 160 900" width="100%">
-      <defs>
-        <linearGradient id="heartGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ff4d6d" /><stop offset="100%" stop-color="#c9184a" /></linearGradient>
-        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.4"/></filter>
-      </defs>
-      <!-- The Dotted Winding Love Path -->
-      <path d="M 80,40 Q 130,130 80,220 T 80,400 T 80,580 T 80,760 Q 30,830 80,875" fill="none" stroke="#ffb3c1" stroke-width="3" stroke-dasharray="6,6" />
-      <!-- STEP 1: The Infidelity / Spotify -->
-      <g filter="url(#shadow)">
-        <circle cx="80" cy="40" r="14" fill="#1db954" />
-        <path d="M74,36 L88,36 M72,40 L88,40 M75,44 L85,44" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/> 
-        <text x="80" y="70" font-size="10" font-weight="bold" fill="#e0e1dd" text-anchor="middle">1. Cloud-Bound</text>
-      </g>
-      <!-- STEP 2: The Hunt / Plattenläden -->
-      <g filter="url(#shadow)">
-        <circle cx="80" cy="220" r="16" fill="#f8f9fa" />
-        <circle cx="80" cy="220" r="12" fill="none" stroke="#dee2e6" stroke-width="1" />
-        <circle cx="80" cy="220" r="5" fill="#ff4d6d" />
-        <circle cx="80" cy="220" r="1.5" fill="#212529" />
-        <text x="80" y="252" font-size="10" font-weight="bold" fill="#e0e1dd" text-anchor="middle">2. The Hunt</text>
-      </g>
-      <!-- STEP 3: The Artwork / Tattoos -->
-      <g filter="url(#shadow)">
-        <rect x="65" cy="390" width="30" height="30" rx="4" fill="#ffffff" opacity="0.15"/>
-        <path d="M80,408 C80,408 73,399 68,404 C63,409 72,418 80,423 C88,418 97,409 92,404 C87,399 80,408 80,408 Z" fill="url(#heartGrad)" />
-        <text x="80" y="440" font-size="10" font-weight="bold" fill="#e0e1dd" text-anchor="middle">3. The Gatefold</text>
-      </g>
-      <!-- STEP 4: The Foreplay / Ritual -->
-      <g filter="url(#shadow)">
-        <circle cx="80" cy="580" r="16" fill="#e9ecef" stroke="#ced4da" stroke-width="2"/>
-        <line x1="80" y1="580" x2="80" y2="566" stroke="#495057" stroke-width="3" stroke-linecap="round" />
-        <text x="80" y="612" font-size="10" font-weight="bold" fill="#e0e1dd" text-anchor="middle">4. Foreplay</text>
-      </g>
-      <!-- STEP 5: The Climax / Sound -->
-      <g filter="url(#shadow)">
-        <path d="M60,750 Q55,760 60,770 M53,745 Q45,760 53,775 M100,750 Q105,760 100,770 M107,745 Q115,760 107,775" fill="none" stroke="#ff4d6d" stroke-width="2" stroke-linecap="round"/>
-        <path d="M80,756 C80,756 75,749 71,753 C67,757 74,764 80,768 C86,764 93,757 89,753 C85,749 80,756 80,756 Z" fill="url(#heartGrad)" />
-        <text x="80" y="792" font-size="10" font-weight="bold" fill="#e0e1dd" text-anchor="middle">5. Pure Bliss</text>
-      </g>
-      <!-- STEP 6: Devotion / Ruin -->
-      <g filter="url(#shadow)">
-        <circle cx="80" cy="875" r="12" fill="none" stroke="#ff4d6d" stroke-width="3" />
-        <path d="M72,875 C72,870 88,880 88,875 C88,870 72,880 72,875" fill="none" stroke="#ffffff" stroke-width="2"/>
-        <text x="80" y="902" font-size="10" font-weight="bold" fill="#e0e1dd" text-anchor="middle">6. Devotion</text>
-      </g>
-    </svg>
-  </div>
-  <!-- 3. RIGHT SIDE COLUMN OPENER (Now with light text) -->
-  <div style="flex: 3; line-height: 1.7; color: #f4f1de;">
-
-
-
 Dear 33⅓ RPM,
 
 I have been unfaithful. I flirted with, and repeatedly succumbed to, the seductive ease of your younger, cloud-bound siblings. They stream in an instant and never hold a grudge when I change positions mid-song. Yet, they are plagued by intrusive ads—most egregiously, that youngest sibling of yours, Spotify. To hell with those hollow, open relationships. I am ready to settle down and commit to you.
@@ -92,9 +36,6 @@ Even when the final notes fade and the stylus spirals into the dead wax of the r
 Yours in the groove,<br>
 **John**
 
-  <!-- 4. CLOSE BOTH OPEN DIV COLUMNS -->
-  </div>
-</div>
 
 
   </div>
