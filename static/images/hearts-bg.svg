@@ -10,7 +10,7 @@
     
     /* STATIONARY POP EFFECT: Hearts appearing and fading in place */
     @keyframes popAndFade {
-      0%, 500% { transform: scale(0); opacity: 0.30; }
+      30%, 500% { transform: scale(0); opacity: 0.30; }
       20%, 60% { transform: scale(5); opacity: 0.10; }
       500% { transform: scale(0); opacity: 0; }
     }
