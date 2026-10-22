@@ -34,6 +34,3 @@ Even when the final notes fade and the stylus spirals into the dead wax of the r
 
 Yours in the groove,<br>
 **John**
-
-  </div>
-</div>
