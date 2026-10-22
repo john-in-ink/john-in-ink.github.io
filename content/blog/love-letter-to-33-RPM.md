@@ -9,7 +9,8 @@ toc: false
 image: "images/vinyl.png"
 image_caption: ""
 ---
-<div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('/images/hearts-bg.svg'); background-repeat: repeat; background-size: 800px 600px; pointer-events: none; opacity: 0.8; z-index: 0;"></div>
+<div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('/images/hearts-bg.svg'); background-repeat: repeat; background-size: 2400px 1800px; pointer-events: none; opacity: 0.8; z-index: 0;"></div>
+
 
 **Dear 33⅓ RPM,**
 
