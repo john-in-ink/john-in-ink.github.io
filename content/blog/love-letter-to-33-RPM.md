@@ -18,6 +18,7 @@ image_caption: ""
   <div style="position: relative; z-index: 1; max-width: 750px; margin: 0 auto; padding: 20px 15px; color: #f4f1de;">
     
 **Dear 33⅓ RPM,**<br>
+
 I have been unfaithful. I flirted with, and repeatedly succumbed to, the seductive ease of your younger, cloud-bound siblings. They stream in an instant and never hold a grudge when I change positions mid-song. Yet, they are plagued by intrusive ads—most egregiously, that youngest sibling of yours, Spotify. To hell with those hollow, open relationships. I am ready to settle down and commit to you.
 
 
