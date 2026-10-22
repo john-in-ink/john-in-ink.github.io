@@ -1,5 +1,5 @@
 ---
-title: "Love Letter to 33⅓ RPM "
+title: "Love letter to 33⅓ RPM "
 subtitle: "Confessions of a hopeless vinyl romantic [18+]"
 date: 2026-10-21 21:00:00 +0200
 layout: "post"
