@@ -3,9 +3,9 @@
     /* FOUNTAIN EFFECT: Hearts floating from bottom to top */
     @keyframes floatUp {
       0% { transform: translateY(650px) scale(1.5); opacity: 0; }
-      80% { opacity: 0.10; }
-      200% { opacity: 0.10; }
-      900% { transform: translateY(-50px) scale(1.1); opacity: 0; }
+      15% { opacity: 0.12; }
+      85% { opacity: 0.12; }
+      100% { transform: translateY(-50px) scale(1.1); opacity: 0; }
     }
     
     /* STATIONARY POP EFFECT: Hearts appearing and fading in place */
