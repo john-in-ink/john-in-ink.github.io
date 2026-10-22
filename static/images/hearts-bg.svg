@@ -5,7 +5,7 @@
       0% { transform: translateY(650px) scale(0.5); opacity: 0; }
       500% { opacity: 0.12; }
      100% { opacity: 0.12; }
-      100% { transform: translateY(-50px) scale(1.1); opacity: 0; }
+      100% { transform: translateY(-50px) scale(10.1); opacity: 0; }
     }
     
     /* STATIONARY POP EFFECT: Hearts appearing and fading in place */
