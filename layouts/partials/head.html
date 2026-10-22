@@ -207,7 +207,7 @@
       const runSyncInjection = () => {
         // 1. Article Page Fix: Adds subtitle under the main H1 heading on full post views
         const postHeading = document.querySelector("main h1, article h1");
-        if (postHeading && postHeading.textContent.includes("Love Letter to 33")) {
+        if (postHeading && postHeading.textContent.includes("Love letter to 33")) {
           if (!document.getElementById("native-article-subtitle")) {
             const subtitleEl = document.createElement("p");
             subtitleEl.id = "native-article-subtitle";
@@ -223,7 +223,7 @@
           if (el.textContent.trim() === "October 21, 2026") {
             if (!el.closest(".flex-1.min-w-0")) {
               const titleHeading = el.previousElementSibling;
-              if (titleHeading && titleHeading.textContent.includes("Love Letter to 33")) {
+              if (titleHeading && titleHeading.textContent.includes("Love letter to 33")) {
                 if (!el.parentElement.querySelector(".gallery-injected-subtitle")) {
                   const subtitleEl = document.createElement("p");
                   subtitleEl.className = "gallery-injected-subtitle text-xs font-medium tracking-wide text-zinc-400 italic mt-1 mb-1";
