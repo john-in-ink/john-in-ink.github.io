@@ -12,7 +12,7 @@ image_caption: ""
 
 Dear 33⅓ RPM,
 
-I have been unfaithful. I have flirted with your younger, digital, and cloud-bound siblings. They are quicker, more convenient, and never hold a grudge when I change positions mid-song. But they are plagued by ads, especially your youngest sibling, Spotify. To hell with open relationships. I am ready for commitment.
+I have been unfaithful. I flirted with, and repeatedly succumbed to, the seductive ease of your younger, cloud-bound siblings. They stream in an instant and never hold a grudge when I change positions mid-song. Yet, they are plagued by intrusive ads—most egregiously, that youngest sibling of yours, Spotify. To hell with those hollow, open relationships. I am ready to settle down and commit to you.
 
 I long for the ritual—a meticulous foreplay that must precede the first note. It begins with a deliberate choice: the slow burn of Enya’s Celtic melodies or the hardcore brevity of a jazz quickie. Then comes the tactile choreography: massaging the record jacket while it rests like a hip bone in my hands, inhaling its faint scent of aging paper, and feeling the breathless anxiety of sliding the 180-gram circular slab of wax from its inner sleeve—hoping my fingernails leave no permanent scars on its delicate skin. I balance the vinyl masterfully by its outer edges, brush away any faint veils of dust, and slide it down the spindle. I lower the diamond stylus gently into the outer grooves and turn the knob to 33. First comes a faint crackle, then pure bliss capped by a shared climax. At the end, I physically flip your body over to Side B just to finish what we started.
 
