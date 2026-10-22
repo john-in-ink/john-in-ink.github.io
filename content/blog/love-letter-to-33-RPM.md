@@ -10,7 +10,7 @@ image: "images/vinyl.png"
 image_caption: ""
 ---
 <!-- 1. BASE BACKGROUND WRAPPER CONTAINER -->
-<div style="position: relative; width: 100%; min-height: 100vh; padding: 30px 15px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; line-height: 1.7; color: #f4f1de; background-image: url('{{ site.baseurl }}images/hearts-bg.svg'); background-size: cover; background-position: center; background-attachment: fixed; background-repeat: no-repeat;">
+<div style="position: relative; width: 100%; min-height: 100vh; padding: 30px 15px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; line-height: 1.7; color: #f4f1de; background-image: url('{{ site.baseurl }}/images/hearts-bg.svg'); background-size: cover; background-position: center; background-attachment: fixed; background-repeat: no-repeat;">
 
   <!-- 2. MAX-WIDTH READING COLUMN -->
   <div style="max-width: 750px; margin: 0 auto; position: relative; z-index: 1;">
