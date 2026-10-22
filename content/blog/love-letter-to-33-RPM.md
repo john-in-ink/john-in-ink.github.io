@@ -10,6 +10,7 @@ image: "images/vinyl.png"
 image_caption: ""
 ---
 <div style="background-image: url('{{ site.baseurl }}/images/hearts-bg.svg'); background-repeat: no-repeat; background-position: center; background-size: cover; background-attachment: fixed; padding: 20px; color: #f4f1de;">
+
 **Dear 33⅓ RPM,**
 
 I have been unfaithful. I flirted with, and repeatedly succumbed to, the seductive ease of your younger, cloud-bound siblings. They stream in an instant and never hold a grudge when I change positions mid-song. Yet, they are plagued by intrusive ads—most egregiously, that youngest sibling of yours, Spotify. To hell with those hollow, open relationships. I am ready to settle down and commit to you.
