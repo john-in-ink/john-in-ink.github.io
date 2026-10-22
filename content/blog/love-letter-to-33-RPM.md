@@ -10,12 +10,12 @@ image: "images/vinyl.png"
 image_caption: ""
 ---
 
+<!-- 1. START THE TWO-COLUMN LAYOUT -->
 <div style="display: flex; gap: 40px; align-items: flex-start; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">
 
-  <!-- LEFT SIDE: Inline Generated SVG Roadmap -->
+  <!-- 2. LEFT SIDE: FIXED SVG ROADMAP -->
   <div style="flex: 1; max-width: 180px; min-width: 140px; position: sticky; top: 20px;">
     <svg xmlns="http://w3.org" viewBox="0 0 160 900" width="100%">
-      <!-- Definitions for drop shadows & Gradients -->
       <defs>
         <linearGradient id="heartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stop-color="#ff4d6d" />
@@ -32,14 +32,13 @@ image_caption: ""
 
       <!-- STEP 1: The Infidelity / Spotify -->
       <g filter="url(#shadow)">
-        <circle cx="80" cy="40" r="14" fill="#1db954" /> <!-- Spotify Green -->
+        <circle cx="80" cy="40" r="14" fill="#1db954" />
         <path d="M74,36 L88,36 M72,40 L88,40 M75,44 L85,44" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/> 
         <text x="80" y="70" font-size="10" font-weight="bold" fill="#5c677d" text-anchor="middle">1. Cloud-Bound</text>
       </g>
 
       <!-- STEP 2: The Hunt / Plattenläden -->
       <g filter="url(#shadow)">
-        <!-- Vinyl Record Icon Outer -->
         <circle cx="80" cy="220" r="16" fill="#212529" />
         <circle cx="80" cy="220" r="12" fill="none" stroke="#343a40" stroke-width="1" />
         <circle cx="80" cy="220" r="5" fill="#ff4d6d" />
@@ -49,15 +48,13 @@ image_caption: ""
 
       <!-- STEP 3: The Artwork / Tattoos -->
       <g filter="url(#shadow)">
-        <!-- Heart / Gatefold Icon -->
-        <path d="M68,390 F1 M68,390 L92,390 L92,414 L68,414 Z" fill="#6c757d" opacity="0.1"/>
-        <path d="M80,405 C80,405 73,396 68,401 C63,406 72,415 80,420 C88,415 97,406 92,401 C87,396 80,405 80,405 Z" fill="url(#heartGrad)" />
-        <text x="80" y="435" font-size="10" font-weight="bold" fill="#5c677d" text-anchor="middle">3. The Gatefold</text>
+        <rect x="65" cy="390" width="30" height="30" rx="4" fill="#6c757d" opacity="0.1"/>
+        <path d="M80,408 C80,408 73,399 68,404 C63,409 72,418 80,423 C88,418 97,409 92,404 C87,399 80,408 80,408 Z" fill="url(#heartGrad)" />
+        <text x="80" y="440" font-size="10" font-weight="bold" fill="#5c677d" text-anchor="middle">3. The Gatefold</text>
       </g>
 
       <!-- STEP 4: The Foreplay / Ritual -->
       <g filter="url(#shadow)">
-        <!-- Turntable Weights / Dial -->
         <circle cx="80" cy="580" r="16" fill="#e9ecef" stroke="#ced4da" stroke-width="2"/>
         <line x1="80" y1="580" x2="80" y2="566" stroke="#495057" stroke-width="3" stroke-linecap="round" />
         <text x="80" y="612" font-size="10" font-weight="bold" fill="#5c677d" text-anchor="middle">4. Foreplay</text>
@@ -65,15 +62,13 @@ image_caption: ""
 
       <!-- STEP 5: The Climax / Sound -->
       <g filter="url(#shadow)">
-        <!-- Soundwaves + Heart -->
         <path d="M60,750 Q55,760 60,770 M53,745 Q45,760 53,775 M100,750 Q105,760 100,770 M107,745 Q115,760 107,775" fill="none" stroke="#ff4d6d" stroke-width="2" stroke-linecap="round"/>
-        <path d="M80,752 C80,752 75,745 71,749 C67,753 74,760 80,764 C86,760 93,753 89,749 C85,745 80,752 80,752 Z" fill="url(#heartGrad)" />
+        <path d="M80,756 C80,756 75,749 71,753 C67,757 74,764 80,768 C86,764 93,757 89,753 C85,749 80,756 80,756 Z" fill="url(#heartGrad)" />
         <text x="80" y="792" font-size="10" font-weight="bold" fill="#5c677d" text-anchor="middle">5. Pure Bliss</text>
       </g>
 
       <!-- STEP 6: Devotion / Ruin -->
       <g filter="url(#shadow)">
-        <!-- Locking Arm / Infinity Ring -->
         <circle cx="80" cy="875" r="12" fill="none" stroke="#ff4d6d" stroke-width="3" />
         <path d="M72,875 C72,870 88,880 88,875 C88,870 72,880 72,875" fill="none" stroke="#212529" stroke-width="2"/>
         <text x="80" y="902" font-size="10" font-weight="bold" fill="#5c677d" text-anchor="middle">6. Devotion</text>
@@ -81,8 +76,9 @@ image_caption: ""
     </svg>
   </div>
 
-  <!-- RIGHT SIDE: The Letter Text -->
+  <!-- 3. RIGHT SIDE COLUMN OPENER -->
   <div style="flex: 3; line-height: 1.6; color: #212529;">
+
 
 Dear 33⅓ RPM,
 
@@ -109,6 +105,11 @@ Even when the final notes fade and the stylus spirals into the dead wax of the r
 
 Yours in the groove,<br>
 **John**
+
+  <!-- 4. CLOSE BOTH OPEN DIV COLUMNS -->
+  </div>
+</div>
+
 
   </div>
 </div>
