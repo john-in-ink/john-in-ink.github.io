@@ -14,7 +14,10 @@ Dear 33⅓ RPM,
 
 I have been unfaithful. I flirted with, and repeatedly succumbed to, the seductive ease of your younger, cloud-bound siblings. They stream in an instant and never hold a grudge when I change positions mid-song. Yet, they are plagued by intrusive ads—most egregiously, that youngest sibling of yours, Spotify. To hell with those hollow, open relationships. I am ready to settle down and commit to you.
 
-==>heart, you and me heart /==
+<p style="text-align: center; font-size: 24px;">
+  ❤️ You &amp; Me ❤️
+</p>
+
 
 I long for the thrill of the hunt—swiping through Discogs like a dating app or sweating in the claustrophobic aisles of cramped record shops, surrounded by the low, competitive chatter of fellow scavengers. I long for the mystery of blind dates in Plattenläden in Hamburg, leaving with unexpected gems—secondhand records carrying the ghosted memories of their exes, like a former lover’s name penned in faded ink across the jacket corner. These grooved time capsules double as perfect pillow-talk fodder, like my most expensive lover: an original pressing of Passenger’s All the Little Lights.
 
