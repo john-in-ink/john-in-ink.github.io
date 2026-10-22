@@ -9,8 +9,6 @@ toc: false
 image: "images/vinyl.png"
 image_caption: ""
 ---
-<!-- TEXT WRAPPER COLUMN WITH GIF BACKGROUND -->
-<div style="max-width: 800px; margin: 0 auto; padding: 20px 15px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; line-height: 1.7; color: #f4f1de; background-image: url('./images/beating-heart.gif'); background-size: 140px; background-repeat: repeat; background-attachment: scroll;">
 **Dear 33⅓ RPM,**
 
 I have been unfaithful. I flirted with, and repeatedly succumbed to, the seductive ease of your younger, cloud-bound siblings. They stream in an instant and never hold a grudge when I change positions mid-song. Yet, they are plagued by intrusive ads—most egregiously, that youngest sibling of yours, Spotify. To hell with those hollow, open relationships. I am ready to settle down and commit to you.
