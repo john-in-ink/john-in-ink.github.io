@@ -1,50 +1,28 @@
 <svg xmlns="http://w3.org" viewBox="0 0 800 600" width="100%" height="100%">
   <style>
-    /* FOUNTAIN EFFECT: Hearts floating from bottom to top */
-    @keyframes floatUp {
-      0% { transform: translateY(650px) scale(0.5); opacity: 0; }
-      15% { opacity: 0.12; }
-      85% { opacity: 0.12; }
-      100% { transform: translateY(-100px) scale(1.1); opacity: 0; }
-    }
-    
-    /* STATIONARY POP EFFECT: Hearts appearing and fading in place */
-    @keyframes popAndFade {
-      0%, 100% { transform: scale(0); opacity: 0; }
-      20%, 60% { opacity: 0.10; }
-      80% { transform: scale(0); opacity: 0; }
-    }
-
+    @keyframes floatUp { 0% { transform: translateY(650px) scale(0.5); opacity: 0; } 15% { opacity: 0.12; } 85% { opacity: 0.12; } 100% { transform: translateY(-100px) scale(1.1); opacity: 0; } }
+    @keyframes popAndFade { 0%, 100% { transform: scale(0); opacity: 0; } 20%, 60% { opacity: 0.10; } 80% { transform: scale(0); opacity: 0; } }
     .heart-float { fill: #ff4d6d; transform-origin: center; }
     .heart-pop { fill: #ff4d6d; transform-origin: 12px 12px; }
   </style>
 
-  <!-- ================= BALANCED FLOATING FOUNTAINS (LEFT, MIDDLE, RIGHT) ================= -->
-  <!-- Left Side Fountain Streams -->
   <path class="heart-float" style="animation: floatUp 11s infinite linear 0s;" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" transform="translate(60, 0) scale(0.8)"/>
   <path class="heart-float" style="animation: floatUp 15s infinite linear 3s;" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" transform="translate(120, 0) scale(0.5)"/>
   
-  <!-- Middle Fountain Streams -->
   <path class="heart-float" style="animation: floatUp 13s infinite linear 1s;" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" transform="translate(380, 0) scale(0.7)"/>
   <path class="heart-float" style="animation: floatUp 16s infinite linear 5s;" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" transform="translate(420, 0) scale(0.4)"/>
 
-  <!-- Right Side Fountain Streams -->
   <path class="heart-float" style="animation: floatUp 12s infinite linear 2s;" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" transform="translate(680, 0) scale(0.6)"/>
   <path class="heart-float" style="animation: floatUp 14s infinite linear 4s;" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" transform="translate(730, 0) scale(0.9)"/>
 
-  <!-- ================= POPPING BACKGROUND HEARTS (MASSIVE & VARIED SIZES) ================= -->
-  <!-- 500% GIANT HEARTS (scale 5.0) -->
   <path class="heart-pop" style="animation: popAndFade 8s infinite ease-in-out 0s;" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" transform="translate(200, 100) scale(5.0)"/>
   <path class="heart-pop" style="animation: popAndFade 11s infinite ease-in-out 4s;" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" transform="translate(520, 320) scale(5.0)"/>
 
-  <!-- 200% LARGE HEARTS (scale 2.0) -->
   <path class="heart-pop" style="animation: popAndFade 7s infinite ease-in-out 2s;" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" transform="translate(560, 80) scale(2.0)"/>
   <path class="heart-pop" style="animation: popAndFade 9s infinite ease-in-out 5.5s;" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" transform="translate(220, 400) scale(2.0)"/>
 
-  <!-- 100% STANDARD HEARTS (scale 1.0) -->
   <path class="heart-pop" style="animation: popAndFade 6s infinite ease-in-out 1s;" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" transform="translate(300, 250) scale(1.0)"/>
 
-  <!-- 50% MINATURE TWINKLES (scale 0.5) -->
   <path class="heart-pop" style="animation: popAndFade 4.5s infinite ease-in-out 3s;" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" transform="translate(480, 200) scale(0.5)"/>
   <path class="heart-pop" style="animation: popAndFade 5.5s infinite ease-in-out 6.5s;" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" transform="translate(640, 220) scale(0.5)"/>
 </svg>
