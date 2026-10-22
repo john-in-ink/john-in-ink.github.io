@@ -30,5 +30,5 @@ Sometimes, I long for occasional 45 RPM flings—quick, intense romantic sprints
 
 Even when the final notes fade and the stylus spirals into the dead wax of the run-out groove, I linger, tracing the secret messages and master numbers etched into your dark margins. Every encounter is a welcome seduction that demands submission but guarantees pleasure. You spin slow, but you hold me longer.
 
-Yours in the groove,
+Yours in the groove,\\
 John
