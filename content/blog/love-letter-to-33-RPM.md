@@ -9,7 +9,15 @@ toc: false
 image: "images/vinyl.png"
 image_caption: ""
 ---
-<div style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-image: url('/images/hearts-bg.svg'); background-repeat: repeat; background-size: 2400px 1800px; pointer-events: none; opacity: 0.8; z-index: 0;"></div>
+<!-- 1. FULL CONTAINER WRAPPER -->
+<div style="position: relative; width: 100%;">
+
+  <!-- 2. THE VISUAL LAYOUT (Stretched fully without repeating) -->
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('/images/hearts-bg.svg'); background-repeat: no-repeat; background-size: cover; background-position: center top; pointer-events: none; opacity: 0.8; z-index: 0;"></div>
+
+  <!-- 3. YOUR TEXT WRAPPER COLUMN -->
+  <div style="position: relative; z-index: 1; max-width: 750px; margin: 0 auto; padding: 20px 15px; color: #f4f1de;">
+
 
 **Dear 33⅓ RPM,**
 
