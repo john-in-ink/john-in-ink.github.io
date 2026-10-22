@@ -10,6 +10,37 @@ image: "images/vinyl.png"
 image_caption: ""
 ---
 
+<!-- 1. TEXT CONTAINER WITH FLOATING ANIMATED HEARTS -->
+<div style="position: relative; width: 100%; overflow: hidden; padding: 20px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; line-height: 1.7; color: #f4f1de;">
+  
+  <!-- CSS Animation Core Styles -->
+  <style>
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+      15% { opacity: 0.15; }
+      85% { opacity: 0.15; }
+      100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+    }
+    .bg-heart {
+      position: fixed; /* Pinned to viewport so they float continuously as you scroll */
+      bottom: -50px;
+      fill: #ff4d6d;
+      pointer-events: none;
+      z-index: 0;
+    }
+  </style>
+
+  <!-- Ambient Vector Floating Hearts Layer -->
+  <svg class="bg-heart" style="left: 10%; width: 24px; animation: floatUp 14s infinite linear;" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+  <svg class="bg-heart" style="left: 30%; width: 14px; animation: floatUp 18s infinite linear 2s;" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+  <svg class="bg-heart" style="left: 55%; width: 32px; animation: floatUp 22s infinite linear 5s;" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+  <svg class="bg-heart" style="left: 75%; width: 18px; animation: floatUp 16s infinite linear 1s;" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+  <svg class="bg-heart" style="left: 88%; width: 26px; animation: floatUp 20s infinite linear 7s;" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+
+  <!-- 2. LETTER CONTENT BLOCK -->
+  <div style="position: relative; z-index: 1; max-width: 800px; margin: 0 auto; padding: 0 15px;">
+
+
 Dear 33⅓ RPM,
 
 I have been unfaithful. I flirted with, and repeatedly succumbed to, the seductive ease of your younger, cloud-bound siblings. They stream in an instant and never hold a grudge when I change positions mid-song. Yet, they are plagued by intrusive ads—most egregiously, that youngest sibling of yours, Spotify. To hell with those hollow, open relationships. I am ready to settle down and commit to you.
@@ -35,8 +66,6 @@ Even when the final notes fade and the stylus spirals into the dead wax of the r
 
 Yours in the groove,<br>
 **John**
-
-
 
   </div>
 </div>
