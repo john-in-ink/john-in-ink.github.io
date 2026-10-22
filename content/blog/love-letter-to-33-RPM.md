@@ -9,14 +9,12 @@ toc: false
 image: "images/vinyl.png"
 image_caption: ""
 ---
-<!-- 1. FULL CONTAINER WRAPPER -->
-<div style="position: relative; width: 100%;">
+<!-- 1. BASE BACKGROUND WRAPPER CONTAINER -->
+<div style="position: relative; width: 100%; min-height: 100vh; padding: 30px 15px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; line-height: 1.7; color: #f4f1de; background-image: url('{{ site.baseurl }}/images/hearts-bg.svg'); background-size: cover; background-position: center; background-attachment: fixed; background-repeat: no-repeat;">
 
-  <!-- 2. THE VISUAL LAYOUT (Tiled, crisp background pattern) -->
-  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('/images/hearts-bg.svg'); background-repeat: repeat; background-size: 400px 300px; pointer-events: none; opacity: 0.8; z-index: 0;"></div>
+  <!-- 2. MAX-WIDTH READING COLUMN -->
+  <div style="max-width: 750px; margin: 0 auto; position: relative; z-index: 1;">
 
-  <!-- 3. YOUR TEXT WRAPPER COLUMN (Elevated to the top layer) -->
-  <div style="position: relative; z-index: 1; max-width: 750px; margin: 0 auto; padding: 20px 15px; color: #f4f1de;">
 
 **Dear 33⅓ RPM,**
 
